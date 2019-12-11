@@ -1,0 +1,273 @@
+/*Section container*/
+
+.design {
+  padding: 3rem 0 3rem 0;
+  margin: 0 3rem 0 3rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+/*Title section design*/
+
+.collapse {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+    &-icon {
+      font-size: 1.8rem;
+      color: $firstcolor;
+    }
+
+    &-title {
+      padding-left: 1rem;
+      font-family: $fonttertiary;
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: $fourthcolor;
+      text-transform: uppercase;
+    }
+  }
+
+  &__icon-down {
+    font-size: 1.8rem;
+    color: $fourthcolor;
+  }
+}
+
+/*Section design: colorss*/
+
+.colour {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2.2rem;
+
+  &__title {
+    font-size: 1.4rem;
+    color: $fourthcolor;
+    font-family: $fonttertiary;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-left: 2.5rem;
+  }
+
+  &__palettes {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+}
+
+/*Palette - option1*/
+
+.option1 {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.palette1 {
+  display: flex;
+  flex-direction: row;
+
+  &__item1 {
+    margin-left: 1rem;
+    background: $secondcolor;
+    width: 3rem;
+    height: 2.5rem;
+  }
+
+  &__item2 {
+    background: $seventhcolor;
+    width: 3rem;
+    height: 2.5rem;
+  }
+
+  &__item3 {
+    background: $fifthcolor;
+    width: 3rem;
+    height: 2.5rem;
+  }
+}
+
+/*Palette - option2*/
+
+.option2 {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.palette2 {
+  display: flex;
+  flex-direction: row;
+
+  &__item1 {
+    margin-left: 1rem;
+    background: #420101;
+    width: 3rem;
+    height: 2.5rem;
+  }
+
+  &__item2 {
+    background: #bd1010;
+    width: 3rem;
+    height: 2.5rem;
+  }
+
+  &__item3 {
+    background: #e95626;
+    width: 3rem;
+    height: 2.5rem;
+  }
+}
+
+/*Palette -option3*/
+
+.option3 {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.palette3 {
+  display: flex;
+  flex-direction: row;
+
+  &__item1 {
+    margin-left: 1rem;
+    background: #3e5b65;
+    width: 3rem;
+    height: 2.5rem;
+  }
+
+  &__item2 {
+    background: #eab052;
+    width: 3rem;
+    height: 2.5rem;
+  }
+
+  &__item3 {
+    background: #a0c0cf;
+    width: 3rem;
+    height: 2.5rem;
+  }
+}
+
+// paleta 4
+
+.option4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.palette4 {
+  display: flex;
+  flex-direction: row;
+
+  &__item1 {
+    margin-left: 1rem;
+    background: $color1Palette4;
+    width: 3rem;
+    height: 2.5rem;
+  }
+
+  &__item2 {
+    background: $color2Palette4;
+    width: 3rem;
+    height: 2.5rem;
+  }
+
+  &__item3 {
+    background: $color3Palette4;
+    width: 3rem;
+    height: 2.5rem;
+  }
+}
+
+/*Change color*/
+
+.js-card-palette1 {
+  .card__title {
+    color: $color1Palette1;
+  }
+
+  .card__link {
+    color: $color1Palette1;
+  }
+
+  .card__border-left {
+    border-left: 0.5rem solid $color2Palette1;
+  }
+
+  .card__item {
+    border: solid 0.2rem $color3Palette1;
+  }
+}
+
+.js-card-palette2 {
+  .card__title {
+    color: $color1Palette2;
+  }
+
+  .card__link {
+    color: $color1Palette2;
+  }
+
+  .card__border-left {
+    border-left: 0.5rem solid $color2Palette2;
+  }
+
+  .card__item {
+    border: solid 0.2rem $color3Palette2;
+  }
+}
+
+.js-card-palette3 {
+  .card__title {
+    color: $color1Palette3;
+  }
+
+  .card__link {
+    color: $color1Palette3;
+  }
+
+  .card__border-left {
+    border-left: 0.5rem solid $color2Palette3;
+  }
+
+  .card__item {
+    border: solid 0.2rem $color3Palette3;
+  }
+}
+
+.js-card-palette4 {
+  .card__title {
+    color: $color1Palette4;
+  }
+
+  .card__link {
+    color: $color1Palette4;
+  }
+
+  .card__border-left {
+    border-left: 0.5rem solid $color2Palette4;
+  }
+
+  .card__item {
+    border: solid 0.2rem $color3Palette4;
+  }
+}

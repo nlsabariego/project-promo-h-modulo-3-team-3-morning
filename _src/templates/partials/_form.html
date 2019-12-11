@@ -1,0 +1,74 @@
+<section class="design">
+
+  <div class="collapse js-collapsible__tigger">
+    <div class="collapse__items">
+      <i class="far fa-keyboard collapse__items-icon"></i>
+
+      <h1 class="collapse__items-title">Rellena</h1>
+
+    </div>
+    <i class="fas fa-angle-down collapse__icon-down"></i>
+  </div>
+
+  <div class="js-container">
+    <form class="container-form js-containerForm" method="POST">
+      <label for="fullName" class="form__label">Nombre completo</label>
+      <input type="text" id="name" name="name" placeholder="Ej:sally-hill@gmail.com" class="form__input js-name"
+        required />
+
+      <label for="job" class="form__label">Puesto</label>
+      <input type="text" id="job" name="job" placeholder="Ej: Front-end unicorn" class="form__input js-job" required />
+
+      <label for="image" class="form__label">Imagen de perfil</label>
+      <div class="form__image">
+        <input type="file" class="form__file js__profile-upload-btn" name="file" id="img-selector">
+        <button for="file" class="form__image--btn js__profile-trigger">Añadir imagen</button>
+        <img class="form__image--min js__profile-preview-img" />
+      </div>
+
+      <label for="email" class="form__label">Email</label>
+      <input type="email" id="email" name="email" placeholder="Ej: sally-hill@gmail.com" class="form__input js-email"
+        required />
+
+      <label for="phone" class="form__label">Teléfono</label>
+      <input type="tel" id="phone" name="phone" placeholder="Ej:555-55-55-55" class="form__input js-phone" />
+
+      <label for="linkedin" class="form__label">Linkedin</label>
+      <input type="text" id="linkedin" name="linkedin" placeholder="Ej: linkedin.com/in/sally.hill"
+        class="form__input js-linkedin" required />
+
+      <label for="github" class="form__label">Github</label>
+      <input type="text" id="github" name="github" placeholder="Ej: @sally-hill" class="form__input js-github"
+        required />
+  </div>
+</section>
+
+<section class="design">
+
+  <div class="collapse js-collapsible__tigger">
+    <div class="collapse__items">
+      <i class="fas fa-share-alt collapse__items-icon"></i>
+      <h1 class="collapse__items-title">Comparte</h1>
+    </div>
+
+    <i class="fas fa-angle-down collapse__icon-down"></i>
+  </div>
+
+  <div class="js-container">
+    <div class="share">
+      <button class="share__button  js-button" type="submit"><i class="far fa-address-card"></i>Crear
+        tarjeta</button>
+
+      <div class="share__result share__result--hidden js-shareResult">
+        <p class="share__result__text">La tarjeta ha sido creada:</p>
+        <a class="share__result__url" target=_blank></a>
+
+        <a class="share__result__button" href="" title="Comparte en twitter" target="_blank"> <i
+            class="fab fa-twitter"></i>Compartir
+          en twitter</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</form>
