@@ -25,8 +25,8 @@ const shareEle = document.querySelector('.js-shareResult');
 const cardFieldsDefaultValues = {
   name: 'Nombre Apellido',
   job: 'Front-end developer',
-  phone: 'tel:',
-  email: 'mailto:',
+  phone: '',
+  email: '',
   linkedin: '',
   github: '',
 };
@@ -66,7 +66,7 @@ function changeCard() {
   let linkedinValue = linkedinEle.value;
   if (linkedinValue !== empty) {
     liEleLinkedin.classList.remove('opacity');
-    cardLinkedinEle.href = linkedinValue;
+    cardLinkedinEle.href = `https://www.linkedin.com/in/${linkedinValue}`;
   } else {
     liEleLinkedin.classList.add('opacity');
   }
@@ -74,7 +74,7 @@ function changeCard() {
   let githubValue = githubEle.value;
   if (githubValue !== empty) {
     liEleGithub.classList.remove('opacity');
-    cardGithubEle.href = githubValue;
+    cardGithubEle.href = `https://github.com/${githubValue}`;
   } else {
     liEleGithub.classList.add('opacity');
   }
