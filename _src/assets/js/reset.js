@@ -16,7 +16,7 @@ const deleteData = function() {
   document.querySelector('.js-github').value = '';
   document.querySelector('.js__profile-upload-btn').value = '';
   cardImage.style.backgroundImage = "url('./assets/images/placeholderImg.jpg')";
-  profilePreviewImg.src = './assets/images/placeholderImg.jpg';
+  profilePreviewImg.style.backgroundImage = "url('')";
 
   submitEl.classList.remove('share__button--active');
   shareEle.classList.add('share__result--hidden');
