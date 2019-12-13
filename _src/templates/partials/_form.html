@@ -21,9 +21,9 @@
 
       <label for="image" class="form__label">Imagen de perfil</label>
       <div class="form__image">
-        <input type="file" class="form__file js__profile-upload-btn" name="file" id="img-selector">
+        <input type="file" class="form__file js__profile-upload-btn" name="file" id="img-selector" required />
         <button for="file" class="form__image--btn js__profile-trigger">Añadir imagen</button>
-        <img class="form__image--min js__profile-preview-img" />
+        <div class="form__image--min js__profile-preview-img" ></div>
       </div>
 
       <label for="email" class="form__label">Email</label>
@@ -31,7 +31,7 @@
         required />
 
       <label for="phone" class="form__label">Teléfono</label>
-      <input type="tel" id="phone" name="phone" placeholder="Ej:555-55-55-55" class="form__input js-phone" />
+      <input type="tel" id="phone" name="phone" placeholder="Enter a telephone number in the form 555-55-55-55" class="form__input js-phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}"/>
 
       <label for="linkedin" class="form__label">Linkedin</label>
       <input type="text" id="linkedin" name="linkedin" placeholder="Ej: linkedin.com/in/sally.hill"

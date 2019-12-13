@@ -30,7 +30,7 @@ function setImage() {
 function previewImage() {
   if (picture !== '') {
     profileImage.style.backgroundImage = `url(${picture})`;
-    profilePreviewImg.src = picture;
+    profilePreviewImg.style.backgroundImage = `url(${picture})`;
   }
 }
 /**
