@@ -90,18 +90,30 @@ githubEle.addEventListener('keyup', changeCard);
 
 //Validamos el formulario y añadimos la clase "active" cuando el formulario está cumplimentado
 const containerForm = document.querySelector('.js-containerForm');
-const validation = function(event) {
+const validation = function (event) {
   event.preventDefault();
   activateShareButton();
 };
 
+
+//añadir disable para que no se clicke
 // Activar el boton de compartir solo si el formulario esta completo
-const activateShareButton = function() {
+const activateShareButton = function () {
   const check = containerForm.checkValidity();
+  console.log(`entro, check: ${check}`);
   if (check === true) {
     submitEl.classList.add('share__button--active');
+    submitEl.disabled = false;
+
   } else {
     submitEl.classList.remove('share__button--active');
+    submitEl.disabled = true;
+
+
+
+    // submitEl.setAttribute('disabled', true);
+
+
   }
 };
 
