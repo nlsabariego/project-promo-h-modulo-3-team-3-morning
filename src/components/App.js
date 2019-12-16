@@ -1,5 +1,6 @@
 import React from "react";
 import "../stylesheets/App.scss";
+import Share from "./Share";
 
 function App() {
   return (
