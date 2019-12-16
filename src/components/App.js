@@ -1,5 +1,6 @@
 import React from "react";
 import "../stylesheets/App.scss";
+import Fill from ".Fill";
 
 function App() {
   return (
