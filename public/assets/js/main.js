@@ -1,4 +1,4 @@
-'use strict';
+
 const collapsibleTriggers = document.querySelectorAll('.js-collapsible__tigger');
 
 

@@ -1,9 +1,7 @@
 import React from "react";
 import "../stylesheets/App.scss";
+import Fill from ".Fill";
 import Share from "./Share";
-
-
-
 
 import Card from "./Card";
 
