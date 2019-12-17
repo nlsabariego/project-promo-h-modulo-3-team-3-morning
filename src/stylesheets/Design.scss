@@ -1,5 +1,51 @@
-/*Section design: colorss*/
+/*Section container*/
 @import "commons.scss";
+
+.design {
+  padding: 3rem 0 3rem 0;
+  margin: 0 3rem 0 3rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+/*Title section design*/
+
+.collapse {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+
+    &-icon {
+      font-size: 1.8rem;
+      color: $firstcolor;
+    }
+
+    &-title {
+      padding-left: 1rem;
+      font-family: $fonttertiary;
+      font-weight: bold;
+      font-size: 1.8rem;
+      color: $fourthcolor;
+      text-transform: uppercase;
+    }
+  }
+
+  &__icon-down {
+    font-size: 1.8rem;
+    color: $fourthcolor;
+  }
+}
+
+/*Section design: colorss*/
+
 .colour {
   display: flex;
   flex-direction: row;

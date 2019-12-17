@@ -1,5 +1,6 @@
 import React from "react";
 import "../stylesheets/_commons.scss";
+import "../stylesheets/Design.scss";
 import Design from "./Design";
 import Fill from "./Fill";
 import Share from "./Share";
