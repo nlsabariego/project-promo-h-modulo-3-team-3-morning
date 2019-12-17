@@ -1,4 +1,5 @@
 import React from "react";
+import Design from "./Design";
 import "../stylesheets/App.scss";
 import Fill from ".Fill";
 import Share from "./Share";
@@ -8,9 +9,9 @@ import Card from "./Card";
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <main className="main">
-        <Card />
+        {/* <Card /> */}
         <div className="container">
           <section className="design content-collapsible">
             <div className="collapse js-collapsible__tigger">
@@ -33,7 +34,7 @@ function App() {
                 </div>{" "}
                 <i className="fas fa-angle-down collapse__icon-down"></i>
               </div>
-              <Fill />
+              {/* <Fill /> */}
             </section>
             <section className="design">
               <div className="collapse js-collapsible__tigger">
@@ -44,12 +45,12 @@ function App() {
                 </div>{" "}
                 <i className="fas fa-angle-down collapse__icon-down"></i>
               </div>
-              <Share />
+              {/* <Share /> */}
             </section>
           </form>
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

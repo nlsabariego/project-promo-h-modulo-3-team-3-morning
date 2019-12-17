@@ -8,6 +8,7 @@
 
 a {
   color: white;
+  cursor: pointer;
 }
 
 a:link,a:visited,a:hover,a:active {
@@ -335,6 +336,10 @@ a:link,a:visited,a:hover,a:active {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> ticket15-desing
 }
 
 .palette1 {
@@ -376,6 +381,10 @@ a:link,a:visited,a:hover,a:active {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> ticket15-desing
 }
 
 .palette2 {
@@ -417,6 +426,10 @@ a:link,a:visited,a:hover,a:active {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> ticket15-desing
 }
 
 .palette3 {
@@ -459,6 +472,10 @@ a:link,a:visited,a:hover,a:active {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> ticket15-desing
 }
 
 .palette4 {
@@ -622,6 +639,10 @@ a:link,a:visited,a:hover,a:active {
   font-family: "Open Sans", sans-serif;
   -webkit-box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.32);
   box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.32);
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> ticket15-desing
 }
 
 .form__image--min {
@@ -728,6 +749,10 @@ a:link,a:visited,a:hover,a:active {
   font-size: 1.4rem;
   font-family: "Open Sans", sans-serif;
   padding: 0.3rem 0.9rem 0.7rem 1.05rem;
+<<<<<<< HEAD
+=======
+  cursor: pointer;
+>>>>>>> ticket15-desing
 }
 
 .fab {
