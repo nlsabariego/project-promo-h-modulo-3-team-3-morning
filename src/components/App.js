@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylesheets/App.scss";
+import "../stylesheets/_commons.scss";
 import Design from "./Design";
 import Fill from "./Fill";
 import Share from "./Share";

@@ -1,4 +1,5 @@
 import React from "react";
+import "../stylesheets/Design.scss";
 
 function Design() {
   return (
