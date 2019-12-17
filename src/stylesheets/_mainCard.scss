@@ -1,0 +1,32 @@
+@media all and (min-width: 768px) {
+  .main {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-column-gap: 3rem;
+
+    padding: 2.3rem 4rem 2.1rem 0;
+    background-image: linear-gradient(to bottom, $sixthcolor, $thirdcolor 9%);
+  }
+  .colors {
+    grid-row: 1/2;
+  }
+
+  .result {
+    grid-column: 2/3;
+    grid-row: 1/4;
+  }
+
+  .form {
+    grid-row: 2/3;
+  }
+
+  .create {
+    grid-row: 3/4;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+}
