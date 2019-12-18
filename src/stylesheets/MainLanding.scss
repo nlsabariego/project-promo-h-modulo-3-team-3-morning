@@ -1,3 +1,4 @@
+@import "commons.scss";
 .landing {
   width: 100%;
   background-color: #f5f5f5;
@@ -14,8 +15,7 @@
 
       @media all and (min-width: 768px) {
         width: 41.9rem;
-        margin-top:25.5rem;
-
+        margin-top: 25.5rem;
       }
     }
   }
@@ -26,7 +26,6 @@
     font-weight: 900;
     color: $firstcolor;
     text-align: center;
-    
 
     @media all and (min-width: 768px) {
       font-size: 2.4rem;
@@ -104,6 +103,5 @@
     font-weight: 600;
     font-size: 1.6rem;
     margin: 18.6rem 0 3rem 0;
-
   }
 }
