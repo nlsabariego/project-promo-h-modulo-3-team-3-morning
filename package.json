@@ -2,6 +2,7 @@
   "name": "react-project-promo-h-modulo-3-team-3-morning",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.3",
@@ -15,7 +16,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docs": "rm -rf docs && react-scripts build && mv build docs",
+    "push-docs": "rm -rf docs && react-scripts build && mv build docs && git add docs/* && git commit -m \"Update docs\" && git push"
   },
   "eslintConfig": {
     "extends": "react-app"
