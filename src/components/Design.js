@@ -1,4 +1,5 @@
 import React from "react";
+import Palettes from "./Palettes";
 import "../stylesheets/Design.scss";
 
 function Design() {
@@ -6,77 +7,52 @@ function Design() {
     <div className="js-container">
       <div className="colour">
         <h2 className="colour__title">Colores</h2>
-
         <div className="colour__palettes js-colour-palettes">
-          <div id="js-color-option1">
-            <label className="option1" htmlFor="color-option1">
-              <input
-                className="option1_items"
-                type="radio"
-                value="1"
-                id="color-option1"
-                name="color-options"
-                palette="palette1"
-                checked
-              />
-              <div className="palette1">
-                <div className="palette1__item1"></div>
-                <div className="palette1__item2"></div>
-                <div className="palette1__item3"></div>
-              </div>
-            </label>
-          </div>
-          <div id="js-color-option2">
-            <label className="option2" htmlFor="color-option2">
-              <input
-                className="option2_items"
-                type="radio"
-                value="2"
-                id="color-option2"
-                name="color-options"
-                palette="palette2"
-              />
-              <div className="palette2">
-                <div className="palette2__item1"></div>
-                <div className="palette2__item2"></div>
-                <div className="palette2__item3"></div>
-              </div>
-            </label>
-          </div>
-          <div id="js-color-option3">
-            <label className="option3" htmlFor="color-option3">
-              <input
-                className="option3_items"
-                type="radio"
-                value="3"
-                id="color-option3"
-                name="color-options"
-                palette="palette3"
-              />
-              <div className="palette3">
-                <div className="palette3__item1"></div>
-                <div className="palette3__item2"></div>
-                <div className="palette3__item3"></div>
-              </div>
-            </label>
-          </div>
-          <div id="js-color-option4">
-            <label className="option4" htmlFor="color-option4">
-              <input
-                className="option4_items"
-                type="radio"
-                value="4"
-                id="color-option4"
-                name="color-options"
-                palette="palette4"
-              />
-              <div className="palette4">
-                <div className="palette4__item1"></div>
-                <div className="palette4__item2"></div>
-                <div className="palette4__item3"></div>
-              </div>
-            </label>
-          </div>
+          <Palettes
+            id="js-color-option1"
+            className="option1"
+            classNameInput="option1_items"
+            value="1"
+            idInput="color-option1"
+            palette="palette1"
+            color1="palette1__item1"
+            color2="palette1__item2"
+            color3="palette1__item3"
+          />
+          <Palettes
+            id="js-color-option2"
+            className="option2"
+            classNameInput="option2_items"
+            value="2"
+            idInput="color-option2"
+            palette="palette2"
+            color1="palette2__item1"
+            color2="palette2__item2"
+            color3="palette2__item3"
+          />
+          <Palettes
+            id="js-color-option3"
+            className="option3"
+            classNameInput="option3_items"
+            value="3"
+            idInput="color-option3"
+            palette="palette3"
+            color1="palette3__item1"
+            color2="palette3__item2"
+            color3="palette3__item3"
+          />
+          <Palettes
+            id="js-color-option4"
+            className="option4"
+            classNameInput="option4_items"
+            value="4"
+            idInput="color-option4"
+            palette="palette4"
+            color1="palette4__item1"
+            color2="palette4__item2"
+            color3="palette4__item3"
+          />
+
         </div>
       </div>
     </div>
