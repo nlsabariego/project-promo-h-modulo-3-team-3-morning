@@ -13,7 +13,7 @@ function Palettes(props) {
                     id={props.idInput}
                     name="color-options"
                     palette={props.palette}
-                    checked
+                    checked={props.checked}
                 />
                 <div className={props.palette}>
                     <div className={props.color1}></div>

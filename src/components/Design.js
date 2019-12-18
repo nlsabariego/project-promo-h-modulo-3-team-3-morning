@@ -18,6 +18,8 @@ function Design() {
             color1="palette1__item1"
             color2="palette1__item2"
             color3="palette1__item3"
+            checked
+
           />
           <Palettes
             id="js-color-option2"
