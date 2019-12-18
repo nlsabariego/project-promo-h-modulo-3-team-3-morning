@@ -20,16 +20,12 @@ function App() {
             <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon">
               <Design />
             </Collapsable>
-            <Collapsable>
-              <i className="far fa-keyboard collapse__items-icon"></i>
-              <h1 className="collapse__items-title">Rellena</h1>
+            <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
+              <Fill />
             </Collapsable>
-            <Fill />
-            <Collapsable>
-              <i className="fas fa-share-alt collapse__items-icon"></i>
-              <h1 className="collapse__items-title">Comparte</h1>
+            <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
+              <Share />
             </Collapsable>
-            <Share />
           </form>
         </div>
       </main>
