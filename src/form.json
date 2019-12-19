@@ -25,10 +25,9 @@
     "htmlFor": "image",
     "label": "Imagen del perfil",
     "type": "file",
-    "id": "name",
-    "name": "name",
-    "placeholder": "Ej:reactivas@gmail.com",
-    "className": "form__input js-name",
+    "id": "img-selector",
+    "name": "file",
+    "className": "form__file js__profile-upload-btn",
     "component": "imageForm",
     "required": "true"
   },
