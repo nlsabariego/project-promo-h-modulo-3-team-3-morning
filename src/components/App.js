@@ -17,7 +17,7 @@ function App() {
         <Card />
         <div className="container">
           <form className="container-form js-containerForm" method="POST">
-            <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon">
+            <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
               <Design />
             </Collapsable>
             <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">

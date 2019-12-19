@@ -13,7 +13,7 @@ class Collapsable extends React.Component {
     this.setState(prevState => {
       let nextTypeDisplay;
       if (prevState.typeDisplay === "close") {
-        nextTypeDisplay = "";
+        nextTypeDisplay = "open";
       } else {
         nextTypeDisplay = "close";
       }
@@ -25,7 +25,7 @@ class Collapsable extends React.Component {
 
   render() {
     return (
-      <section className={`design content-collapsible ${this.state.typeDisplay}`}>
+      <section className="design content-collapsible">
         <div className="collapse js-collapsible__tigger" onClick={this.handleClick}>
           <div className="collapse__items">
             <i className={this.props.icon}></i>
@@ -33,7 +33,7 @@ class Collapsable extends React.Component {
           </div>
           <i className="fas fa-angle-down collapse__icon-down"></i>
         </div>
-        <div class="collapsable-content">{this.props.children}</div>
+        <div class={`collapsable-content ${this.state.typeDisplay}`}>{this.props.children}</div>
       </section>
     );
   }
