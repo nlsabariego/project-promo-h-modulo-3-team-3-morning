@@ -9,29 +9,58 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Collapsable from "./Collapsable";
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <main className="main">
-        <Card />
-        <div className="container">
-          <form className="container-form js-containerForm" method="POST">
-            <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
-              <Design />
-            </Collapsable>
-            <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
-              <Fill />
-            </Collapsable>
-            <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
-              <Share />
-            </Collapsable>
-          </form>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+    this.handleChangeInputs = this.handleChangeInputs.bind(this);
+  }
+
+  handleChangeInputs(event) {
+    const inputName = event.target.name;
+    const inputValue = event.target.value;
+    if (inputValue !== "") {
+      this.setState({
+        [inputName]: inputValue
+      });
+    } else {
+      this.setState({
+        [inputName]: undefined
+      });
+    }
+  }
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <main className="main">
+          <Card
+            name={this.state.name}
+            job={this.state.job}
+            phone={this.state.phone}
+            email={this.state.email}
+            linkedin={this.state.linkedin}
+            github={this.state.github}
+          />
+          <div className="container">
+            <form className="container-form js-containerForm" method="POST">
+              <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
+                <Design />
+              </Collapsable>
+              <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
+                <Fill handleChangeInputs={this.handleChangeInputs} />
+              </Collapsable>
+              <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
+                <Share />
+              </Collapsable>
+            </form>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
