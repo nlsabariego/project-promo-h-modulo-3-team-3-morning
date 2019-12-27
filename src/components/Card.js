@@ -13,9 +13,9 @@ function Card(props) {
           <i className='far fa-trash-alt trash__icon'></i>Reset
         </button>
         <div className='card'>
-          <User />
+          <User name={props.name} job={props.job} />
           <Photo />
-          <Icons />
+          <Icons phone={props.phone} email={props.email} linkedin={props.linkedin} github={props.github} />
         </div>
       </div>
     </section>

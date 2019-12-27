@@ -1,6 +1,5 @@
 import React from "react";
 import "../stylesheets/Card.scss";
-import PropTypes from "prop-types";
 
 function Icons(props) {
   return (
@@ -28,19 +27,5 @@ function Icons(props) {
     </ul>
   );
 }
-
-Icons.defaultProps = {
-  phone: "",
-  email: "",
-  linkedin: "",
-  github: ""
-};
-
-Icons.propTypes = {
-  phone: PropTypes.string,
-  email: PropTypes.string.isRequired,
-  linkedin: PropTypes.string.isRequired,
-  github: PropTypes.string.isRequired
-};
 
 export default Icons;

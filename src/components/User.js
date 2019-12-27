@@ -1,6 +1,5 @@
 import React from "react";
 import "../stylesheets/Card.scss";
-import PropTypes from "prop-types";
 
 function User(props) {
   return (
@@ -12,13 +11,3 @@ function User(props) {
 }
 
 export default User;
-
-User.defaultProps = {
-  name: "Nombre Apellido",
-  job: "Front-end developer"
-};
-
-User.propTypes = {
-  name: PropTypes.string.isRequired,
-  job: PropTypes.string.isRequired
-};
