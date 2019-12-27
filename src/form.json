@@ -48,8 +48,9 @@
     "type": "tel",
     "id": "phone",
     "name": "phone",
-    "placeholder": "Ej:555-55-55-55",
+    "placeholder": "Enter a telephone number in the form 555-55-55-55",
     "className": "form__input js-phone",
+    "pattern": "[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}",
     "component": "textForm",
     "required": "false"
   },
