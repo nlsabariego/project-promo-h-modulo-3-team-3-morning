@@ -6,20 +6,20 @@ function Card(props) {
   return (
     <section className="result">
       <div className="result__container">
-        <button className="button--delete js-button--delete">
+        <button className="button--delete">
           <i className="far fa-trash-alt trash__icon"></i>Reset
         </button>
-        <div className="card js-card">
+        <div className="card">
           <div className="card__border-left card__border-left">
-            <h1 className="card__title js-cardTitle">{props.name}</h1>
-            <h2 className="card__job js-cardJob">{props.job}</h2>
+            <h1 className="card__title">{props.name}</h1>
+            <h2 className="card__job">{props.job}</h2>
           </div>
 
-          <div className="card__image js__profile-image"></div>
+          <div className="card__image"></div>
           <ul className="card__list">
-            <li className="card__item js-card__item  opacity itemPhone">
+            <li className={`card__item ${props.phone === "" ? "opacity" : ""}`}>
               <a
-                className="card__link js-cardPhone"
+                className="card__link"
                 href={`tel:${props.phone}`}
                 title="Número teléfono"
                 target="_blank"
@@ -28,7 +28,7 @@ function Card(props) {
                 <i className="fas fa-mobile-alt card__icon"></i>
               </a>
             </li>
-            <li className="card__item js-card__item opacity itemEmail">
+            <li className={`card__item ${props.email === "" ? "opacity" : ""}`}>
               <a
                 className="card__link js-cardEmail"
                 href={`mailto:${props.email}`}
@@ -39,7 +39,7 @@ function Card(props) {
                 <i className="far fa-envelope card__icon"></i>
               </a>
             </li>
-            <li className="card__item js-card__item opacity itemLinkedin">
+            <li className={`card__item ${props.linkedin === "" ? "opacity" : ""}`}>
               <a
                 className="card__link js-cardLinkedin"
                 href={`https://www.linkedin.com/in/${props.linkedin}`}
@@ -50,7 +50,7 @@ function Card(props) {
                 <i className="fab fa-linkedin-in card__icon"></i>
               </a>
             </li>
-            <li className="card__item js-card__item opacity itemGithub">
+            <li className={`card__item ${props.github === "" ? "opacity" : ""}`}>
               <a
                 className="card__link js-cardGithub"
                 href={`https://github.com/${props.github}`}
@@ -71,6 +71,7 @@ function Card(props) {
 Card.defaultProps = {
   name: "Nombre Apellido",
   job: "Front-end developer",
+  phone: "",
   email: "",
   linkedin: "",
   github: ""
