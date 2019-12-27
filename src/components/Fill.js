@@ -1,10 +1,11 @@
 import React from "react";
 import "../stylesheets/Fill.scss";
 import InputComponent from "./InputComponent";
-function Fill() {
+
+function Fill(props) {
   return (
     <div className="js-container">
-      <InputComponent />
+      <InputComponent handleChangeInputs={props.handleChangeInputs} />
     </div>
   );
 }
