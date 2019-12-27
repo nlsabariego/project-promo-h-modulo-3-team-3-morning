@@ -1,7 +1,7 @@
 import React from "react";
 import form from "../form.json";
 
-function InputComponent() {
+function InputComponent(props) {
   return (
     <React.Fragment>
       {form.map(data =>
@@ -18,6 +18,7 @@ function InputComponent() {
               placeholder={data.placeholder}
               className={data.className}
               required={data.required === true ? "required" : ""}
+              onChange={props.handleChangeInputs}
             />
           </div>
         ) : (
