@@ -12,8 +12,28 @@ import Collapsable from "./Collapsable";
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      name: undefined,
+      job: undefined,
+      phone: undefined,
+      email: undefined,
+      linkedin: undefined,
+      github: undefined
+    };
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+  }
+
+  handleReset(event) {
+    event.preventDefault();
+    this.setState({
+      name: undefined,
+      job: undefined,
+      phone: undefined,
+      email: undefined,
+      linkedin: undefined,
+      github: undefined
+    });
   }
 
   handleChangeInputs(event) {
@@ -42,6 +62,7 @@ class App extends React.Component {
             email={this.state.email}
             linkedin={this.state.linkedin}
             github={this.state.github}
+            handleReset={this.handleReset}
           />
           <div className="container">
             <form className="container-form js-containerForm" method="POST">

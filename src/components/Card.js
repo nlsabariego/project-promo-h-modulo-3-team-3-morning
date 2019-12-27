@@ -1,14 +1,13 @@
 import React from "react";
 import "../stylesheets/Card.scss";
+import Reset from "./Reset";
 import PropTypes from "prop-types";
 
 function Card(props) {
   return (
     <section className="result">
       <div className="result__container">
-        <button className="button--delete">
-          <i className="far fa-trash-alt trash__icon"></i>Reset
-        </button>
+        <Reset handleReset={props.handleReset} />
         <div className="card">
           <div className="card__border-left card__border-left">
             <h1 className="card__title">{props.name}</h1>
