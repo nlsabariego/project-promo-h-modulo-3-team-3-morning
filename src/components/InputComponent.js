@@ -6,15 +6,14 @@ function InputComponent(props) {
       <label
         htmlFor={props.htmlFor}
         className="form__label">
-        {props.label}
       </label>
       <input
-        type={props.type}
         id={props.id}
+        type={props.type}
         name={props.name}
         placeholder={props.placeholder}
         className={props.className}
-        required={props.required === true ? "required" : ""}
+        required={props.required}
         onChange={props.handleChangeInputs}
       />
     </div>

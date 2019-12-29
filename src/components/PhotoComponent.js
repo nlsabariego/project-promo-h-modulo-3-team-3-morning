@@ -6,12 +6,11 @@ function PhotoComponent(props) {
       <label
         htmlFor={props.htmlFor}
         className="form__label">
-        {props.label}
       </label>
       <div className="form__image">
         <input
-          type={props.type}
           id={props.id}
+          type={props.type}
           name={props.name}
           className={props.className}
         />

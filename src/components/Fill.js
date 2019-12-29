@@ -11,16 +11,14 @@ function Fill(props) {
       {form.map(data =>
         data.component === "textForm" ? (
           <InputComponent
-            handleChangeInputs={props.handleChangeInputs}
             htmlFor={data.htmlFor}
-            className="form__label"
-            type={data.type}
             id={data.id}
+            type={data.type}
             name={data.name}
             placeholder={data.placeholder}
             className={data.className}
             required={data.required === true ? "required" : ""}
-            onChange={props.handleChangeInputs}
+            handleChangeInputs={props.handleChangeInputs}
           />
         ) : (
             <PhotoComponent
