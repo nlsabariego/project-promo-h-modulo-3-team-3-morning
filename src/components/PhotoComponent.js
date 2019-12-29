@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function PhotoComponent(props) {
   return (
-    <div>
+    <React.Fragment>
       <label
         htmlFor={props.htmlFor}
         className="form__label">
@@ -25,7 +25,7 @@ function PhotoComponent(props) {
         <img
           className="form__image--min js__profile-preview-img" alt="" />
       </div>
-    </div>
+    </React.Fragment>
   )
 }
 

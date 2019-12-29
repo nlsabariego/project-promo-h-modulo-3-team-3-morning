@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 function InputComponent(props) {
   return (
-    <div>
+    <React.Fragment>
       <label
         htmlFor={props.htmlFor}
         className="form__label">
@@ -18,7 +18,7 @@ function InputComponent(props) {
         required={props.required}
         onChange={props.handleChangeInputs}
       />
-    </div>
+    </React.Fragment>
   );
 }
 
