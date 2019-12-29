@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 
 function InputComponent(props) {
   return (
@@ -21,6 +23,21 @@ function InputComponent(props) {
 }
 
 
+
+
+
+
+
+
+InputComponent.propTypes = {
+  htmlFor: PropTypes.string,
+  id: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  placeholder: PropTypes.string,
+  className: PropTypes.string,
+  required: PropTypes.bool.isRequired,
+};
 
 
 export default InputComponent;

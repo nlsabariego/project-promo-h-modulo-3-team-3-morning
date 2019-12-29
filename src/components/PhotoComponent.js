@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 
 function PhotoComponent(props) {
   return (
@@ -13,6 +15,7 @@ function PhotoComponent(props) {
           type={props.type}
           name={props.name}
           className={props.className}
+          required={props.required}
         />
         <button
           htmlFor="file"
@@ -25,5 +28,16 @@ function PhotoComponent(props) {
     </div>
   )
 }
+
+
+PhotoComponent.propTypes = {
+  htmlFor: PropTypes.string,
+  id: PropTypes.string,
+  type: PropTypes.string,
+  name: PropTypes.string,
+  className: PropTypes.string,
+  required: PropTypes.bool.isRequired,
+};
+
 
 export default PhotoComponent;
