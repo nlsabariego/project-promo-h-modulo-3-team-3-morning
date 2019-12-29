@@ -1,5 +1,4 @@
-[
-  {
+[{
     "htmlFor": "fullName",
     "label": "Nombre completo",
     "type": "text",
