@@ -1,14 +1,20 @@
 import React from 'react';
+import form from '../form.json';
 
-function FormText(props) {
+function FormText(){
   return (
+    <React.Fragment>
+    {form.map(data =>
     <div>
-      <label htmlFor={props.htmlFor} className='form__label'>
-        {props.label}
-      </label>
-      <input key={props.id} type={props.type} id={props.id} name={props.name} placeholder={props.placeholder} className={props.className} required={props.required === true ? 'required' : ''} />
+       <label htmlFor={data.htmlFor} className='form__label'>
+         {data.label}
+       </label>
+       <input key={data.id} type={data.type} id={data.id} name={data.name} placeholder={data.placeholder} className={data.className} required={data.required === true ? 'required' : ''} />
     </div>
-  );
-}
+   )}
+</React.Fragment>
+  )
+};
+   
 
 export default FormText;
