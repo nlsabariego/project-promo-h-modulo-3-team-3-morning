@@ -8,17 +8,19 @@ import Card from "./Card";
 import Header from "./Header";
 import Footer from "./Footer";
 import Collapsable from "./Collapsable";
+import localStorage from "../localStorage/";
 
 class App extends React.Component {
   constructor() {
     super();
+    //this.userData = localStorage.get('userData', {});
     this.state = {
-      name: undefined,
-      job: undefined,
-      phone: undefined,
-      email: undefined,
-      linkedin: undefined,
-      github: undefined
+      name: localStorage.get('name', undefined),
+      job: localStorage.get('job', undefined),
+      phone: localStorage.get('phone', undefined),
+      email: localStorage.get('email', undefined),
+      linkedin: localStorage.get('linkedin', undefined),
+      github: localStorage.get('github', undefined)
     };
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -48,6 +50,8 @@ class App extends React.Component {
         [inputName]: undefined
       });
     }
+    //localStorage.set(`userData`, JSON.stringify(this.state))
+    localStorage.set(`${inputName}`, this.state[inputName]);
   }
 
   render() {
