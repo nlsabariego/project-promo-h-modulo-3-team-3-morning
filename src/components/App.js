@@ -18,7 +18,7 @@ class App extends React.Component {
       phone: undefined,
       email: undefined,
       linkedin: undefined,
-      github: undefined
+      github: undefined,
     };
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -50,6 +50,7 @@ class App extends React.Component {
     }
   }
 
+
   render() {
     return (
       <div>
@@ -70,7 +71,9 @@ class App extends React.Component {
                 <Design />
               </Collapsable>
               <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
-                <Fill handleChangeInputs={this.handleChangeInputs} />
+                <Fill
+                  handleChangeInputs={this.handleChangeInputs}
+                />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
                 <Share />
