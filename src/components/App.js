@@ -59,12 +59,12 @@ class App extends React.Component {
     const myFile = event.target.files[0];
     const reader = new FileReader();
     reader.readAsDataURL(myFile);
-    reader.onload = function () {
-      console.log(reader.result);
+    reader.onload = () => {
+      this.setState({
+        file: reader.result
+      });
+      // console.log(reader.result);
     }
-    this.setState({
-      file: reader.result
-    })
   }
 
 
