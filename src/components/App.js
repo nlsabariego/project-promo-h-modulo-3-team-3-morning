@@ -92,6 +92,7 @@ class App extends React.Component {
                 <Fill
                   handleChangeInputs={this.handleChangeInputs}
                   handleChangeFile={this.handleChangeFile}
+                  file={this.state.file}
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">

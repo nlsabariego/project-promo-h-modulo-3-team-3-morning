@@ -18,7 +18,7 @@ function Fill(props) {
             name={data.name}
             placeholder={data.placeholder}
             className={data.className}
-            // required={data.required === true ? "required" : ""}
+            required={data.required === true ? "required" : ""}
             handleChangeInputs={props.handleChangeInputs}
           />
         ) : (
@@ -28,9 +28,9 @@ function Fill(props) {
               type={data.type}
               name={data.name}
               className={data.className}
-              // required={data.required === true ? "required" : ""}
+              required={data.required === true ? "required" : ""}
               handleChangeFile={props.handleChangeFile}
-
+              file={props.file}
             />
           )
       )}

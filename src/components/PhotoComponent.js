@@ -24,6 +24,14 @@ class PhotoComponent extends React.Component {
       props,
     } = this;
 
+    let styles = {};
+    if (props.file !== undefined) {
+      styles = {
+        backgroundImage: 'url(' + props.file + ')',
+      };
+    }
+
+
     return (
       <React.Fragment>
         <label
@@ -50,7 +58,7 @@ class PhotoComponent extends React.Component {
           </button>
           <img
             className="form__image--min js__profile-preview-img" alt=""
-            src={this.props.file}
+            style={styles}
           />
         </div>
       </React.Fragment>

@@ -12,9 +12,7 @@ function Photo(props) {
 
   return <div
     className='card__image'
-    style={styles}
-  >
-  </div >;
+    style={styles}></div>;
 }
 
 export default Photo;
