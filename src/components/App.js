@@ -15,6 +15,7 @@ class App extends React.Component {
     this.state = {
       name: undefined,
       job: undefined,
+      file: undefined,
       phone: undefined,
       email: undefined,
       linkedin: undefined,
@@ -22,6 +23,8 @@ class App extends React.Component {
     };
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleChangeFile = this.handleChangeFile.bind(this);
+
   }
 
   handleReset(event) {
@@ -29,6 +32,7 @@ class App extends React.Component {
     this.setState({
       name: undefined,
       job: undefined,
+      file: undefined,
       phone: undefined,
       email: undefined,
       linkedin: undefined,
@@ -51,6 +55,19 @@ class App extends React.Component {
   }
 
 
+  handleChangeFile(event) {
+    const myFile = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(myFile);
+    reader.onload = function () {
+      console.log(reader.result);
+    }
+    this.setState({
+      file: reader.result
+    })
+  }
+
+
   render() {
     return (
       <div>
@@ -59,6 +76,7 @@ class App extends React.Component {
           <Card
             name={this.state.name}
             job={this.state.job}
+            file={this.state.file}
             phone={this.state.phone}
             email={this.state.email}
             linkedin={this.state.linkedin}
@@ -73,6 +91,7 @@ class App extends React.Component {
               <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
                 <Fill
                   handleChangeInputs={this.handleChangeInputs}
+                  handleChangeFile={this.handleChangeFile}
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">

@@ -5,6 +5,7 @@ import form from "../api/form.json";
 import "../stylesheets/Fill.scss";
 
 
+
 function Fill(props) {
   return (
     <div className="js-container">
@@ -23,11 +24,13 @@ function Fill(props) {
         ) : (
             <PhotoComponent
               htmlFor={data.htmlFor}
-              type={data.type}
               id={data.id}
+              type={data.type}
               name={data.name}
               className={data.className}
-            // required={data.required === true ? "required" : ""}
+              // required={data.required === true ? "required" : ""}
+              handleChangeFile={props.handleChangeFile}
+
             />
           )
       )}

@@ -13,7 +13,7 @@ function Card(props) {
         <Reset handleReset={props.handleReset} />
         <div className="card">
           <User name={props.name} job={props.job} />
-          <Photo />
+          <Photo file={props.file} />
           <Icons phone={props.phone} email={props.email} linkedin={props.linkedin} github={props.github} />
         </div>
       </div>
