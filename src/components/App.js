@@ -40,9 +40,8 @@ class App extends React.Component {
     });
   }
 
-  handleChangeInputs(event) {
-    const inputName = event.target.name;
-    const inputValue = event.target.value;
+
+  handleChangeInputs(inputName, inputValue) {
     if (inputValue !== "") {
       this.setState({
         [inputName]: inputValue

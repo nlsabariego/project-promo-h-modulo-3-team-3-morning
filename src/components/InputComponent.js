@@ -2,26 +2,47 @@ import React from "react";
 import PropTypes from "prop-types";
 
 
-function InputComponent(props) {
+class InputComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChangeInputs = this.handleChangeInputs.bind(this);
+  }
 
 
-  return (
-    <React.Fragment>
-      <label
-        htmlFor={props.htmlFor}
-        className="form__label">
-      </label>
-      <input
-        id={props.id}
-        type={props.type}
-        name={props.name}
-        placeholder={props.placeholder}
-        className={props.className}
-        required={props.required}
-        onChange={props.handleChangeInputs}
-      />
-    </React.Fragment>
-  );
+
+  handleChangeInputs(event) {
+    event.preventDefault();
+    const inputName = event.target.name;
+    const inputValue = event.target.value;
+    this.props.handleChangeInputs(inputName, inputValue)
+  }
+
+
+
+  render() {
+    const {
+      props,
+    } = this;
+
+
+    return (
+      <React.Fragment>
+        <label
+          htmlFor={props.htmlFor}
+          className="form__label">
+        </label>
+        <input
+          id={props.id}
+          type={props.type}
+          name={props.name}
+          placeholder={props.placeholder}
+          className={props.className}
+          required={props.required}
+          onChange={this.handleChangeInputs}
+        />
+      </React.Fragment>
+    );
+  }
 }
 
 
