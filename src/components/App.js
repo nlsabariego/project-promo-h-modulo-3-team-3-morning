@@ -15,13 +15,16 @@ class App extends React.Component {
     this.state = {
       name: undefined,
       job: undefined,
+      file: undefined,
       phone: undefined,
       email: undefined,
       linkedin: undefined,
-      github: undefined
+      github: undefined,
     };
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleChangeFile = this.handleChangeFile.bind(this);
+
   }
 
   handleReset(event) {
@@ -29,6 +32,7 @@ class App extends React.Component {
     this.setState({
       name: undefined,
       job: undefined,
+      file: undefined,
       phone: undefined,
       email: undefined,
       linkedin: undefined,
@@ -50,6 +54,14 @@ class App extends React.Component {
     }
   }
 
+  handleChangeFile(file) {
+
+    this.setState({
+      file: file
+    });
+  }
+
+
   render() {
     return (
       <div>
@@ -58,6 +70,7 @@ class App extends React.Component {
           <Card
             name={this.state.name}
             job={this.state.job}
+            file={this.state.file}
             phone={this.state.phone}
             email={this.state.email}
             linkedin={this.state.linkedin}
@@ -70,7 +83,11 @@ class App extends React.Component {
                 <Design />
               </Collapsable>
               <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
-                <Fill handleChangeInputs={this.handleChangeInputs} />
+                <Fill
+                  handleChangeInputs={this.handleChangeInputs}
+                  handleChangeFile={this.handleChangeFile}
+                  file={this.state.file}
+                />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
                 <Share />
