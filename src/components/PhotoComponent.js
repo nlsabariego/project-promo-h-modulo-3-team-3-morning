@@ -15,12 +15,12 @@ class PhotoComponent extends React.Component {
   }
 
   handleChangeFile(event) {
-    const myFile = event.target.files[0];
+    const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
       this.props.handleChangeFile(reader.result)
     }
-    reader.readAsDataURL(myFile);
+    reader.readAsDataURL(file);
   }
 
   render() {
