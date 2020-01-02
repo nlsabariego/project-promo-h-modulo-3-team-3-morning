@@ -54,17 +54,11 @@ class App extends React.Component {
     }
   }
 
+  handleChangeFile(file) {
 
-  handleChangeFile(event) {
-    const myFile = event.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(myFile);
-    reader.onload = () => {
-      this.setState({
-        file: reader.result
-      });
-      // console.log(reader.result);
-    }
+    this.setState({
+      file: file
+    });
   }
 
 

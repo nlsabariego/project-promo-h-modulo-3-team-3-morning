@@ -1,23 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
-
-
 class PhotoComponent extends React.Component {
   constructor(props) {
     super(props);
     this.fileInput = React.createRef();
     this.handleFakeClick = this.handleFakeClick.bind(this);
+    this.handleChangeFile = this.handleChangeFile.bind(this);
   }
-
 
   handleFakeClick(event) {
     event.preventDefault();
     this.fileInput.current.click();
   }
 
-
+  handleChangeFile(event) {
+    const myFile = event.target.files[0];
+    const reader = new FileReader();
+    reader.onload = () => {
+      this.props.handleChangeFile(reader.result)
+    }
+    reader.readAsDataURL(myFile);
+  }
 
   render() {
     const {
@@ -33,6 +37,7 @@ class PhotoComponent extends React.Component {
 
 
     return (
+
       <React.Fragment>
         <label
           htmlFor={props.htmlFor}
@@ -46,7 +51,8 @@ class PhotoComponent extends React.Component {
             className={props.className}
             required={props.required}
             ref={this.fileInput}
-            onChange={this.props.handleChangeFile}
+            value=""
+            onChange={this.handleChangeFile}
 
           />
           <button
