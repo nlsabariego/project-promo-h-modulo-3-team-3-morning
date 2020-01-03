@@ -12,7 +12,7 @@ function Card(props) {
       <div className="result__container">
         <Reset handleReset={props.handleReset} />
         <div className="card">
-          <User name={props.name} job={props.job} />
+          <User name={props.name || "Nombre Apellido"} job={props.job || "Front-end developer"} />
           <Photo file={props.file} />
           <Icons phone={props.phone} email={props.email} linkedin={props.linkedin} github={props.github} />
         </div>
@@ -22,8 +22,8 @@ function Card(props) {
 }
 
 Card.defaultProps = {
-  name: "Nombre Apellido",
-  job: "Front-end developer",
+  name: "",
+  job: "",
   phone: "",
   email: "",
   linkedin: "",

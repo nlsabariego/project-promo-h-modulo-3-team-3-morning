@@ -1,35 +1,43 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+class InputComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChangeInputs = this.handleChangeInputs.bind(this);
+  }
 
-function InputComponent(props) {
+  handleChangeInputs(event) {
+    event.preventDefault();
+    const inputName = event.target.name;
+    const inputValue = event.target.value;
+    this.props.handleChangeInputs(inputName, inputValue)
+  }
 
+  render() {
+    const { props } = this;
+    console.log(props.value);
 
-  return (
-    <React.Fragment>
-      <label
-        htmlFor={props.htmlFor}
-        className="form__label">
-      </label>
-      <input
-        id={props.id}
-        type={props.type}
-        name={props.name}
-        placeholder={props.placeholder}
-        className={props.className}
-        required={props.required}
-        onChange={props.handleChangeInputs}
-      />
-    </React.Fragment>
-  );
+    return (
+      <React.Fragment>
+        <label
+          htmlFor={props.htmlFor}
+          className="form__label">
+        </label>
+        <input
+          id={props.id}
+          type={props.type}
+          name={props.name}
+          placeholder={props.placeholder}
+          className={props.className}
+          required={props.required}
+          value={props.value}
+          onChange={this.handleChangeInputs}
+        />
+      </React.Fragment>
+    );
+  }
 }
-
-
-
-
-
-
-
 
 InputComponent.propTypes = {
   htmlFor: PropTypes.string,
@@ -40,6 +48,5 @@ InputComponent.propTypes = {
   className: PropTypes.string,
   required: PropTypes.bool.isRequired,
 };
-
 
 export default InputComponent;

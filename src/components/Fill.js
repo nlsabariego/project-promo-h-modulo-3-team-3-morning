@@ -1,12 +1,13 @@
 import React from "react";
 import InputComponent from "./InputComponent";
 import PhotoComponent from "./PhotoComponent";
-import form from "../api/form.json";
+import form from "../data/form.json";
 import "../stylesheets/Fill.scss";
 
 
 
 function Fill(props) {
+  console.log(props);
   return (
     <div className="js-container">
       {form.map(data =>
@@ -18,6 +19,7 @@ function Fill(props) {
             name={data.name}
             placeholder={data.placeholder}
             className={data.className}
+            value={props[data.id]}
             required={data.required === true ? "required" : ""}
             handleChangeInputs={props.handleChangeInputs}
           />
