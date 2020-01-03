@@ -1,7 +1,7 @@
 import React from "react";
 import InputComponent from "./InputComponent";
 import PhotoComponent from "./PhotoComponent";
-import form from "../api/form.json";
+import form from "../data/form.json";
 import "../stylesheets/Fill.scss";
 
 
