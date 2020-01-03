@@ -6,6 +6,8 @@ class InputComponent extends React.Component {
   constructor(props) {
     super(props);
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
+
+
   }
 
 
@@ -15,6 +17,7 @@ class InputComponent extends React.Component {
     const inputName = event.target.name;
     const inputValue = event.target.value;
     this.props.handleChangeInputs(inputName, inputValue)
+
   }
 
 
@@ -23,7 +26,7 @@ class InputComponent extends React.Component {
     const {
       props,
     } = this;
-
+    console.log(props);
 
     return (
       <React.Fragment>
@@ -38,6 +41,7 @@ class InputComponent extends React.Component {
           placeholder={props.placeholder}
           className={props.className}
           required={props.required}
+          value={props.value}
           onChange={this.handleChangeInputs}
         />
       </React.Fragment>

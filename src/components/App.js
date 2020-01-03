@@ -85,6 +85,8 @@ class App extends React.Component {
                 <Fill
                   handleChangeInputs={this.handleChangeInputs}
                   handleChangeFile={this.handleChangeFile}
+                  name={this.state.name}
+                  job={this.state.job}
                   file={this.state.file}
                 />
               </Collapsable>
