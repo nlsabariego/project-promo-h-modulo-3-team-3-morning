@@ -1,22 +1,18 @@
-import React from "react";
-import "../stylesheets/Card.scss";
-import Reset from "./Reset";
-import PropTypes from "prop-types";
-import User from "./User";
-import Photo from "./Photo";
-import Icons from "./Icons";
+import React from 'react';
+import '../stylesheets/Card.scss';
+import Reset from './Reset';
+import PropTypes from 'prop-types';
+import User from './User';
+import Photo from './Photo';
+import Icons from './Icons';
 
 function Card(props) {
   return (
-    <section className="result">
-      <div className="result__container">
+    <section className='result'>
+      <div className='result__container'>
         <Reset handleReset={props.handleReset} />
-        <div className="card">
-<<<<<<< HEAD
-          <User name={props.name} job={props.job} />
-=======
-          <User name={props.name || "Nombre Apellido"} job={props.job || "Front-end developer"} />
->>>>>>> dev
+        <div className='card'>
+          <User name={props.name || 'Nombre Apellido'} job={props.job || 'Front-end developer'} />
           <Photo file={props.file} />
           <Icons phone={props.phone} email={props.email} linkedin={props.linkedin} github={props.github} />
         </div>
@@ -26,17 +22,12 @@ function Card(props) {
 }
 
 Card.defaultProps = {
-<<<<<<< HEAD
-  name: "Nombre Apellido",
-  job: "Front-end developer",
-=======
-  name: "",
-  job: "",
->>>>>>> dev
-  phone: "",
-  email: "",
-  linkedin: "",
-  github: ""
+  name: '',
+  job: '',
+  phone: '',
+  email: '',
+  linkedin: '',
+  github: ''
 };
 
 Card.propTypes = {

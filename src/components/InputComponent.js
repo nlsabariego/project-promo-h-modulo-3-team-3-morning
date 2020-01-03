@@ -1,38 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
-<<<<<<< HEAD
-
-
-function InputComponent(props) {
-
-
-  return (
-    <React.Fragment>
-      <label
-        htmlFor={props.htmlFor}
-        className="form__label">
-      </label>
-      <input
-        id={props.id}
-        type={props.type}
-        name={props.name}
-        placeholder={props.placeholder}
-        className={props.className}
-        required={props.required}
-        onChange={props.handleChangeInputs}
-      />
-    </React.Fragment>
-  );
-}
-
-
-
-
-
-
-
-
-=======
+import React from 'react';
+import PropTypes from 'prop-types';
 
 class InputComponent extends React.Component {
   constructor(props) {
@@ -44,7 +11,7 @@ class InputComponent extends React.Component {
     event.preventDefault();
     const inputName = event.target.name;
     const inputValue = event.target.value;
-    this.props.handleChangeInputs(inputName, inputValue)
+    this.props.handleChangeInputs(inputName, inputValue);
   }
 
   render() {
@@ -53,26 +20,21 @@ class InputComponent extends React.Component {
 
     return (
       <React.Fragment>
-        <label
-          htmlFor={props.htmlFor}
-          className="form__label">
-        </label>
-        <input
-          id={props.id}
-          type={props.type}
-          name={props.name}
-          placeholder={props.placeholder}
-          className={props.className}
-          required={props.required}
-          value={props.value}
-          onChange={this.handleChangeInputs}
-        />
+        <label htmlFor={props.htmlFor} className='form__label'></label>
+        <input 
+        id={props.id} 
+        type={props.type} 
+        name={props.name} 
+        placeholder={props.placeholder} 
+        className={props.className} 
+        required={props.required} 
+        value={props.value} 
+        onChange={this.handleChangeInputs} />
       </React.Fragment>
     );
   }
 }
 
->>>>>>> dev
 InputComponent.propTypes = {
   htmlFor: PropTypes.string,
   id: PropTypes.string,
@@ -80,11 +42,7 @@ InputComponent.propTypes = {
   name: PropTypes.string,
   placeholder: PropTypes.string,
   className: PropTypes.string,
-  required: PropTypes.bool.isRequired,
+  required: PropTypes.bool.isRequired
 };
 
-<<<<<<< HEAD
-
-=======
->>>>>>> dev
 export default InputComponent;
