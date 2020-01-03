@@ -13,7 +13,11 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
+<<<<<<< HEAD
       name: undefined,
+=======
+      name: '',
+>>>>>>> dev
       job: undefined,
       file: undefined,
       phone: undefined,
@@ -30,6 +34,7 @@ class App extends React.Component {
   handleReset(event) {
     event.preventDefault();
     this.setState({
+<<<<<<< HEAD
       name: undefined,
       job: undefined,
       file: undefined,
@@ -43,6 +48,20 @@ class App extends React.Component {
   handleChangeInputs(event) {
     const inputName = event.target.name;
     const inputValue = event.target.value;
+=======
+      name: '',
+      job: '',
+      file: undefined,
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: ''
+    });
+  }
+
+
+  handleChangeInputs(inputName, inputValue) {
+>>>>>>> dev
     if (inputValue !== "") {
       this.setState({
         [inputName]: inputValue
@@ -86,7 +105,17 @@ class App extends React.Component {
                 <Fill
                   handleChangeInputs={this.handleChangeInputs}
                   handleChangeFile={this.handleChangeFile}
+<<<<<<< HEAD
                   file={this.state.file}
+=======
+                  name={this.state.name}
+                  job={this.state.job}
+                  file={this.state.file}
+                  phone={this.state.phone}
+                  email={this.state.email}
+                  linkedin={this.state.linkedin}
+                  github={this.state.github}
+>>>>>>> dev
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
