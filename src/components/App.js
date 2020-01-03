@@ -9,29 +9,96 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Collapsable from "./Collapsable";
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <main className="main">
-        <Card />
-        <div className="container">
-          <form className="container-form js-containerForm" method="POST">
-            <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
-              <Design />
-            </Collapsable>
-            <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
-              <Fill />
-            </Collapsable>
-            <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
-              <Share />
-            </Collapsable>
-          </form>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: undefined,
+      job: undefined,
+      file: undefined,
+      phone: undefined,
+      email: undefined,
+      linkedin: undefined,
+      github: undefined,
+    };
+    this.handleChangeInputs = this.handleChangeInputs.bind(this);
+    this.handleReset = this.handleReset.bind(this);
+    this.handleChangeFile = this.handleChangeFile.bind(this);
+
+  }
+
+  handleReset(event) {
+    event.preventDefault();
+    this.setState({
+      name: undefined,
+      job: undefined,
+      file: undefined,
+      phone: undefined,
+      email: undefined,
+      linkedin: undefined,
+      github: undefined
+    });
+  }
+
+  handleChangeInputs(event) {
+    const inputName = event.target.name;
+    const inputValue = event.target.value;
+    if (inputValue !== "") {
+      this.setState({
+        [inputName]: inputValue
+      });
+    } else {
+      this.setState({
+        [inputName]: undefined
+      });
+    }
+  }
+
+  handleChangeFile(file) {
+
+    this.setState({
+      file: file
+    });
+  }
+
+
+  render() {
+    return (
+      <div>
+        <Header />
+        <main className="main">
+          <Card
+            name={this.state.name}
+            job={this.state.job}
+            file={this.state.file}
+            phone={this.state.phone}
+            email={this.state.email}
+            linkedin={this.state.linkedin}
+            github={this.state.github}
+            handleReset={this.handleReset}
+          />
+          <div className="container">
+            <form className="container-form js-containerForm" method="POST">
+              <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
+                <Design />
+              </Collapsable>
+              <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
+                <Fill
+                  handleChangeInputs={this.handleChangeInputs}
+                  handleChangeFile={this.handleChangeFile}
+                  file={this.state.file}
+                />
+              </Collapsable>
+              <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
+                <Share />
+              </Collapsable>
+            </form>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;

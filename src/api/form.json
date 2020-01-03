@@ -1,5 +1,4 @@
-[
-  {
+[{
     "htmlFor": "fullName",
     "label": "Nombre completo",
     "type": "text",
@@ -8,7 +7,7 @@
     "placeholder": "Ej:Reactivas",
     "className": "form__input js-name",
     "component": "textForm",
-    "required": "true"
+    "required": true
   },
   {
     "htmlFor": "job",
@@ -19,7 +18,7 @@
     "placeholder": "Ej:Frontend",
     "className": "form__input js-job",
     "component": "textForm",
-    "required": "true"
+    "required": true
   },
   {
     "htmlFor": "image",
@@ -29,7 +28,7 @@
     "name": "file",
     "className": "form__file js__profile-upload-btn",
     "component": "imageForm",
-    "required": "true"
+    "required": true
   },
   {
     "htmlFor": "email",
@@ -40,7 +39,7 @@
     "placeholder": "Ej:reactivas@gmail.com",
     "className": "form__input js-email",
     "component": "textForm",
-    "required": "true"
+    "required": true
   },
   {
     "htmlFor": "phone",
@@ -48,10 +47,11 @@
     "type": "tel",
     "id": "phone",
     "name": "phone",
-    "placeholder": "Ej:555-55-55-55",
+    "placeholder": "Enter a telephone number in the form 555-55-55-55",
     "className": "form__input js-phone",
+    "pattern": "[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}",
     "component": "textForm",
-    "required": "false"
+    "required": false
   },
   {
     "htmlFor": "linkedin",
@@ -62,7 +62,7 @@
     "placeholder": "Ej: Pepa Muñoz",
     "className": "form__input js-linkedin",
     "component": "textForm",
-    "required": "true"
+    "required": true
   },
   {
     "htmlFor": "github",
@@ -73,6 +73,6 @@
     "placeholder": "Ej:Pepa Muñoz",
     "className": "form__input js-github",
     "component": "textForm",
-    "required": "true"
+    "required": true
   }
 ]
