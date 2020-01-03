@@ -13,7 +13,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: undefined,
+      name: '',
       job: undefined,
       file: undefined,
       phone: undefined,
@@ -30,13 +30,13 @@ class App extends React.Component {
   handleReset(event) {
     event.preventDefault();
     this.setState({
-      name: undefined,
-      job: undefined,
+      name: '',
+      job: '',
       file: undefined,
-      phone: undefined,
-      email: undefined,
-      linkedin: undefined,
-      github: undefined
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: ''
     });
   }
 
@@ -88,6 +88,10 @@ class App extends React.Component {
                   name={this.state.name}
                   job={this.state.job}
                   file={this.state.file}
+                  phone={this.state.phone}
+                  email={this.state.email}
+                  linkedin={this.state.linkedin}
+                  github={this.state.github}
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">

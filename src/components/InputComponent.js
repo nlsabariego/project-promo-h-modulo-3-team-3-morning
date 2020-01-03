@@ -1,32 +1,22 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-
 class InputComponent extends React.Component {
   constructor(props) {
     super(props);
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
-
-
   }
-
-
 
   handleChangeInputs(event) {
     event.preventDefault();
     const inputName = event.target.name;
     const inputValue = event.target.value;
     this.props.handleChangeInputs(inputName, inputValue)
-
   }
 
-
-
   render() {
-    const {
-      props,
-    } = this;
-    console.log(props);
+    const { props } = this;
+    console.log(props.value);
 
     return (
       <React.Fragment>
@@ -49,13 +39,6 @@ class InputComponent extends React.Component {
   }
 }
 
-
-
-
-
-
-
-
 InputComponent.propTypes = {
   htmlFor: PropTypes.string,
   id: PropTypes.string,
@@ -65,6 +48,5 @@ InputComponent.propTypes = {
   className: PropTypes.string,
   required: PropTypes.bool.isRequired,
 };
-
 
 export default InputComponent;
