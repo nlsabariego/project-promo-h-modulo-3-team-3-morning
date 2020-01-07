@@ -14,12 +14,13 @@ class App extends React.Component {
     super();
     this.state = {
       name: '',
-      job: undefined,
+      job: '',
       file: undefined,
-      phone: undefined,
-      email: undefined,
-      linkedin: undefined,
-      github: undefined
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: '',
+      checkedPalette: 1
     };
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
@@ -28,11 +29,9 @@ class App extends React.Component {
   }
 
   handleChecked(checkedPalette) {
-    checkedPalette !== false
-      ? this.setState({
-          [checkedPalette]: checkedPalette
-        })
-      : this.setState({ [checkedPalette]: undefined });
+    this.setState({
+      checkedPalette: checkedPalette
+    });
   }
 
   handleReset(event) {
@@ -71,11 +70,11 @@ class App extends React.Component {
       <div>
         <Header />
         <main className='main'>
-          <Card name={this.state.name} job={this.state.job} file={this.state.file} phone={this.state.phone} email={this.state.email} linkedin={this.state.linkedin} github={this.state.github} handleReset={this.handleReset} handleChecked={this.handleChecked} />
+          <Card name={this.state.name} job={this.state.job} file={this.state.file} phone={this.state.phone} email={this.state.email} linkedin={this.state.linkedin} github={this.state.github} handleReset={this.handleReset} handleChecked={this.state.handleChecked} />
           <div className='container'>
             <form className='container-form js-containerForm' method='POST'>
               <Collapsable title='Diseña' icon='far fa-object-ungroup collapse__items-icon' defaultState='defaultState'>
-                <Design handleChecked={this.handleChecked} />
+                <Design checkedPalette={this.state.checkedPalette} handleChecked={this.handleChecked} />
               </Collapsable>
               <Collapsable title='Rellena' icon='far fa-keyboard collapse__items-icon'>
                 <Fill handleChangeInputs={this.handleChangeInputs} handleChangeFile={this.handleChangeFile} name={this.state.name} job={this.state.job} file={this.state.file} phone={this.state.phone} email={this.state.email} linkedin={this.state.linkedin} github={this.state.github} />

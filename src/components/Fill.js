@@ -5,7 +5,6 @@ import form from '../data/form.json';
 import '../stylesheets/Fill.scss';
 
 function Fill(props) {
-  console.log(props);
   return <div className='js-container'>{form.map(data => (data.component === 'textForm'
   ? <InputComponent 
   htmlFor={data.htmlFor} 
