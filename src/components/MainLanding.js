@@ -1,5 +1,6 @@
 import React from "react";
 import "../stylesheets/MainLanding.scss";
+import { Link } from "react-router-dom";
 
 function MainLanding() {
   return (
@@ -33,9 +34,9 @@ function MainLanding() {
           <p className="landing__menu__li__text">Comparte</p>
         </li>
       </ul>
-      <a className="landing__button" href="./cards.html" title="Empieza a diseñar">
+      <Link to="/main-page" className="landing__button" title="Empieza a diseñar">
         Comenzar
-      </a>
+      </Link>
     </main>
   );
 }
