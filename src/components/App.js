@@ -13,14 +13,7 @@ import localStorage from "../localStorage/";
 class App extends React.Component {
   constructor() {
     super();
-    //this.userData = localStorage.get('userData', {});
-    this.state = {
-      name: localStorage.get('name', undefined),
-      job: localStorage.get('job', undefined),
-      phone: localStorage.get('phone', undefined),
-      email: localStorage.get('email', undefined),
-      linkedin: localStorage.get('linkedin', undefined),
-      github: localStorage.get('github', undefined)
+    const localStorageData = localStorage.get('userData', {
       name: '',
       job: '',
       file: undefined,
@@ -29,7 +22,8 @@ class App extends React.Component {
       linkedin: '',
       github: '',
       checkedPalette: 1
-    };
+    });
+    this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -65,9 +59,12 @@ class App extends React.Component {
         [inputName]: undefined
       });
     }
-    //localStorage.set(`userData`, JSON.stringify(this.state))
-    localStorage.set(`${inputName}`, this.state[inputName]);
   }
+
+  componentDidUpdate() {
+    localStorage.set(`userData`, this.state)
+  }
+
 
   handleChangeFile(file) {
     this.setState({
