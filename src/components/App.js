@@ -21,27 +21,42 @@ class App extends React.Component {
       email: localStorage.get('email', undefined),
       linkedin: localStorage.get('linkedin', undefined),
       github: localStorage.get('github', undefined)
+      name: '',
+      job: '',
+      file: undefined,
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: '',
+      checkedPalette: 1
     };
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
+    this.handleChecked = this.handleChecked.bind(this);
     this.handleReset = this.handleReset.bind(this);
+    this.handleChangeFile = this.handleChangeFile.bind(this);
+  }
+
+  handleChecked(checkedPalette) {
+    this.setState({
+      checkedPalette: checkedPalette
+    });
   }
 
   handleReset(event) {
     event.preventDefault();
     this.setState({
-      name: undefined,
-      job: undefined,
-      phone: undefined,
-      email: undefined,
-      linkedin: undefined,
-      github: undefined
+      name: '',
+      job: '',
+      file: undefined,
+      phone: '',
+      email: '',
+      linkedin: '',
+      github: ''
     });
   }
 
-  handleChangeInputs(event) {
-    const inputName = event.target.name;
-    const inputValue = event.target.value;
-    if (inputValue !== "") {
+  handleChangeInputs(inputName, inputValue) {
+    if (inputValue !== '') {
       this.setState({
         [inputName]: inputValue
       });
@@ -54,29 +69,27 @@ class App extends React.Component {
     localStorage.set(`${inputName}`, this.state[inputName]);
   }
 
+  handleChangeFile(file) {
+    this.setState({
+      file: file
+    });
+  }
+
   render() {
     return (
       <div>
         <Header />
-        <main className="main">
-          <Card
-            name={this.state.name}
-            job={this.state.job}
-            phone={this.state.phone}
-            email={this.state.email}
-            linkedin={this.state.linkedin}
-            github={this.state.github}
-            handleReset={this.handleReset}
-          />
-          <div className="container">
-            <form className="container-form js-containerForm" method="POST">
-              <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
-                <Design />
+        <main className='main'>
+          <Card name={this.state.name} job={this.state.job} file={this.state.file} phone={this.state.phone} email={this.state.email} linkedin={this.state.linkedin} github={this.state.github} handleReset={this.handleReset} handleChecked={this.state.handleChecked} />
+          <div className='container'>
+            <form className='container-form js-containerForm' method='POST'>
+              <Collapsable title='Diseña' icon='far fa-object-ungroup collapse__items-icon' defaultState='defaultState'>
+                <Design checkedPalette={this.state.checkedPalette} handleChecked={this.handleChecked} />
               </Collapsable>
-              <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
-                <Fill handleChangeInputs={this.handleChangeInputs} />
+              <Collapsable title='Rellena' icon='far fa-keyboard collapse__items-icon'>
+                <Fill handleChangeInputs={this.handleChangeInputs} handleChangeFile={this.handleChangeFile} name={this.state.name} job={this.state.job} file={this.state.file} phone={this.state.phone} email={this.state.email} linkedin={this.state.linkedin} github={this.state.github} />
               </Collapsable>
-              <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
+              <Collapsable title='Comparte' icon='fas fa-share-alt collapse__items-icon'>
                 <Share />
               </Collapsable>
             </form>
