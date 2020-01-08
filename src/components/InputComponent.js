@@ -20,7 +20,7 @@ class InputComponent extends React.Component {
 
     return (
       <React.Fragment>
-        <label htmlFor={props.htmlFor} className='form__label'></label>
+        <label htmlFor={props.htmlFor} className='form__label'>{props.label}</label>
         <input 
         id={props.id} 
         type={props.type} 

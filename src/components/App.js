@@ -29,6 +29,7 @@ class App extends React.Component {
   }
 
   handleChecked(checkedPalette) {
+    console.log(checkedPalette)
     this.setState({
       checkedPalette: checkedPalette
     });
@@ -43,7 +44,8 @@ class App extends React.Component {
       phone: '',
       email: '',
       linkedin: '',
-      github: ''
+      github: '',
+      checkedPalette: 1
     });
   }
 
@@ -70,14 +72,35 @@ class App extends React.Component {
       <div>
         <Header />
         <main className='main'>
-          <Card name={this.state.name} job={this.state.job} file={this.state.file} phone={this.state.phone} email={this.state.email} linkedin={this.state.linkedin} github={this.state.github} handleReset={this.handleReset} handleChecked={this.state.handleChecked} />
+          <Card 
+          name={this.state.name} 
+          job={this.state.job} 
+          file={this.state.file} 
+          phone={this.state.phone} 
+          email={this.state.email} 
+          linkedin={this.state.linkedin} 
+          github={this.state.github} 
+          handleReset={this.handleReset} checkedPalette={this.state.checkedPalette} />
           <div className='container'>
-            <form className='container-form js-containerForm' method='POST'>
-              <Collapsable title='Diseña' icon='far fa-object-ungroup collapse__items-icon' defaultState='defaultState'>
+            <form 
+            className='container-form js-containerForm' 
+            method='POST'>
+              <Collapsable 
+              title='Diseña' 
+              icon='far fa-object-ungroup collapse__items-icon' defaultState='defaultState'>
                 <Design checkedPalette={this.state.checkedPalette} handleChecked={this.handleChecked} />
               </Collapsable>
               <Collapsable title='Rellena' icon='far fa-keyboard collapse__items-icon'>
-                <Fill handleChangeInputs={this.handleChangeInputs} handleChangeFile={this.handleChangeFile} name={this.state.name} job={this.state.job} file={this.state.file} phone={this.state.phone} email={this.state.email} linkedin={this.state.linkedin} github={this.state.github} />
+                <Fill 
+                handleChangeInputs={this.handleChangeInputs} 
+                handleChangeFile={this.handleChangeFile} 
+                name={this.state.name} 
+                job={this.state.job} 
+                file={this.state.file} 
+                phone={this.state.phone} 
+                email={this.state.email} 
+                linkedin={this.state.linkedin} 
+                github={this.state.github} />
               </Collapsable>
               <Collapsable title='Comparte' icon='fas fa-share-alt collapse__items-icon'>
                 <Share />
