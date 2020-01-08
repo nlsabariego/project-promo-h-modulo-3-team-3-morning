@@ -1,18 +1,19 @@
-import React from 'react';
-import '../stylesheets/_commons.scss';
-import '../stylesheets/Design.scss';
-import Design from './Design';
-import Fill from './Fill';
-import Share from './Share';
-import Card from './Card';
-import Header from './Header';
-import Footer from './Footer';
-import Collapsable from './Collapsable';
+import React from "react";
+import "../stylesheets/_commons.scss";
+import "../stylesheets/Design.scss";
+import Design from "./Design";
+import Fill from "./Fill";
+import Share from "./Share";
+import Card from "./Card";
+import Header from "./Header";
+import Footer from "./Footer";
+import Collapsable from "./Collapsable";
+import localStorage from "../localStorage/";
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {
+    const localStorageData = localStorage.get('userData', {
       name: '',
       job: '',
       file: undefined,
@@ -21,7 +22,8 @@ class App extends React.Component {
       linkedin: '',
       github: '',
       checkedPalette: 1
-    };
+    });
+    this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
     this.handleReset = this.handleReset.bind(this);
@@ -60,6 +62,11 @@ class App extends React.Component {
       });
     }
   }
+
+  componentDidUpdate() {
+    localStorage.set(`userData`, this.state)
+  }
+
 
   handleChangeFile(file) {
     this.setState({
