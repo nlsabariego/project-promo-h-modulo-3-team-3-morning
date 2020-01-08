@@ -9,6 +9,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Collapsable from "./Collapsable";
 import localStorage from "../localStorage";
+import getDataFromApi from "../api/Fetch"
 
 class MainPage extends React.Component {
   constructor() {
@@ -16,7 +17,7 @@ class MainPage extends React.Component {
     const localStorageData = localStorage.get("userData", {
       name: "",
       job: "",
-      file: undefined,
+      photo: undefined,
       phone: "",
       email: "",
       linkedin: "",
@@ -30,10 +31,41 @@ class MainPage extends React.Component {
     this.handleChangeFile = this.handleChangeFile.bind(this);
   }
 
+  //FETCH - pasar a share
+
+  getDataFromApi(data) {
+    console.log(data)
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(function (resp) {
+        console.log(resp)
+        return resp.json();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+
+
+
+  formatData() {
+    return (
+      this.state({
+
+      })
+    )
+  }
+
   handleChecked(checkedPalette) {
     this.setState({
       checkedPalette: checkedPalette
     });
+    this.getDataFromApi(this.state);
   }
 
   handleReset(event) {
@@ -41,7 +73,7 @@ class MainPage extends React.Component {
     this.setState({
       name: "",
       job: "",
-      file: undefined,
+      photo: undefined,
       phone: "",
       email: "",
       linkedin: "",
@@ -66,9 +98,9 @@ class MainPage extends React.Component {
     localStorage.set(`userData`, this.state);
   }
 
-  handleChangeFile(file) {
+  handleChangeFile(photo) {
     this.setState({
-      file: file
+      photo: photo
     });
   }
 
@@ -80,7 +112,7 @@ class MainPage extends React.Component {
           <Card
             name={this.state.name}
             job={this.state.job}
-            file={this.state.file}
+            photo={this.state.photo}
             phone={this.state.phone}
             email={this.state.email}
             linkedin={this.state.linkedin}
@@ -99,7 +131,7 @@ class MainPage extends React.Component {
                   handleChangeFile={this.handleChangeFile}
                   name={this.state.name}
                   job={this.state.job}
-                  file={this.state.file}
+                  photo={this.state.photo}
                   phone={this.state.phone}
                   email={this.state.email}
                   linkedin={this.state.linkedin}
