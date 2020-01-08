@@ -7,7 +7,6 @@ import Photo from './Photo';
 import Icons from './Icons';
 
 function Card(props) {
-  console.log(props);
   return (
     <section className='result'>
       <div className='result__container'>

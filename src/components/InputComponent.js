@@ -16,7 +16,6 @@ class InputComponent extends React.Component {
 
   render() {
     const { props } = this;
-    console.log(props.value);
 
     return (
       <React.Fragment>

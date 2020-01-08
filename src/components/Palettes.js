@@ -12,7 +12,6 @@ class Palettes extends React.Component {
   }
   render() {
     const { props } = this;
-    console.log(this.props.idInput, this.props.checked)
     return (
       <div id={props.id}>
         <label className={props.className} htmlFor={props.idInput}>
