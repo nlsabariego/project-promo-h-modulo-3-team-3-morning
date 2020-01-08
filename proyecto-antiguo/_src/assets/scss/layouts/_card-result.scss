@@ -29,6 +29,7 @@
   background-color: $fourthcolor;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
   display: block;
+  cursor: pointer;
 
   @media all and (min-width: 768px) {
     margin-top: 17.3rem;

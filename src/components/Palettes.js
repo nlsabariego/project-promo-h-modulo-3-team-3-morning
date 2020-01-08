@@ -14,8 +14,16 @@ class Palettes extends React.Component {
     const { props } = this;
     return (
       <div id={props.id}>
-        <label className={props.className} htmlFor={props.idInput}>
-          <input className={props.classNameInput} type='radio' value={props.value} id={props.idInput} name='color-options' onChange={this.handleChecked} checked={props.checked} />
+        <label
+          className={props.className}
+          htmlFor={props.idInput}>
+          <input
+            className={props.classNameInput} type='radio'
+            value={props.value}
+            id={props.idInput}
+            name='color-options'
+            onChange={this.handleChecked}
+            checked={props.checked} />
 
           <div className={props.palette}>
             <div className={props.color1}></div>
