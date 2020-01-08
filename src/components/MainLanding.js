@@ -14,23 +14,23 @@ function MainLanding() {
 
       <ul className="landing__menu">
         <li className="landing__menu__li">
-          <a className="landing__menu__li__ico" href="#" target="blank" title="Diseña">
+          <span className="landing__menu__li__ico" title="Diseña">
             <i className="far fa-object-ungroup"></i>
-          </a>
+          </span>
           <p className="landing__menu__li__text">Diseña</p>
         </li>
 
         <li className="landing__menu__li">
-          <a className="landing__menu__li__ico" href="#" target="blank" title="Rellena">
+          <span className="landing__menu__li__ico" title="Rellena">
             <i className="far fa-keyboard"></i>
-          </a>
+          </span>
           <p className="landing__menu__li__text">Rellena</p>
         </li>
 
         <li className="landing__menu__li">
-          <a className="landing__menu__li__ico" href="#" target="blank" title="Comparte">
+          <span className="landing__menu__li__ico" title="Comparte">
             <i className="fas fa-share-alt"></i>
-          </a>
+          </span>
           <p className="landing__menu__li__text">Comparte</p>
         </li>
       </ul>
