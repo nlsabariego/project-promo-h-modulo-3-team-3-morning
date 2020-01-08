@@ -10,7 +10,8 @@ function Fill(props) {
   htmlFor={data.htmlFor} 
   id={data.id} 
   type={data.type} 
-  name={data.name} 
+  name={data.name}
+  label={data.label} 
   placeholder={data.placeholder} 
   className={data.className} value={props[data.id]} required={data.required === true ? 'required' : ''} handleChangeInputs={props.handleChangeInputs} /> 
   : <PhotoComponent 
