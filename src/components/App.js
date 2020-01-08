@@ -31,7 +31,6 @@ class App extends React.Component {
   }
 
   handleChecked(checkedPalette) {
-    console.log(checkedPalette)
     this.setState({
       checkedPalette: checkedPalette
     });

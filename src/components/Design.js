@@ -6,7 +6,7 @@ function Design(props) {
   return (
     <div className='colour'>
       <h2 className='colour__title'>Colores</h2>
-      <form className='colour__palettes js-colour-palettes'>
+      <div className='colour__palettes js-colour-palettes'>
         <Palettes
           id='js-color-option1'
           className='option1'
@@ -55,7 +55,7 @@ function Design(props) {
           color3='palette4__item3' 
           handleChecked={props.handleChecked} 
           checked={props.checkedPalette === 4} />
-      </form>
+      </div>
     </div>
   );
 }
