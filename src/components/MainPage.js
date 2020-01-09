@@ -30,6 +30,25 @@ class MainPage extends React.Component {
     this.handleChangeFile = this.handleChangeFile.bind(this);
   }
 
+  isValidated() {
+    const { name, job, file, phone, email, linkedin, github } = this.state;
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const phoneRegex = /[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}/;
+    if (
+      name === "" ||
+      job === "" ||
+      file === undefined ||
+      !phoneRegex.test(phone) ||
+      !emailRegex.test(email) ||
+      linkedin === "" ||
+      github === ""
+    ) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   handleChecked(checkedPalette) {
     this.setState({
       checkedPalette: checkedPalette
@@ -38,6 +57,7 @@ class MainPage extends React.Component {
 
   handleReset(event) {
     event.preventDefault();
+
     this.setState({
       name: "",
       job: "",
@@ -107,7 +127,7 @@ class MainPage extends React.Component {
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
-                <Share />
+                <Share isValidated={this.isValidated()} />
               </Collapsable>
             </form>
           </div>
