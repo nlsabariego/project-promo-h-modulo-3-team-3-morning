@@ -7,8 +7,8 @@ class Palettes extends React.Component {
   }
 
   handleChecked(ev) {
-    const checkedPalette = parseInt(ev.target.value);
-    this.props.handleChecked(checkedPalette);
+    const palette = parseInt(ev.target.value);
+    this.props.handleChecked(palette);
   }
   render() {
     const { props } = this;
