@@ -1,6 +1,7 @@
-@import "commons.scss";
+@import 'commons.scss';
 .landing {
-  width: 100%;
+  width: 100vw;
+
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;

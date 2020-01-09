@@ -15,12 +15,12 @@ class PhotoComponent extends React.Component {
   }
 
   handleChangeFile(event) {
-    const file = event.target.files[0];
+    const photo = event.target.files[0];
     const reader = new FileReader();
     reader.onload = () => {
       this.props.handleChangeFile(reader.result)
     }
-    reader.readAsDataURL(file);
+    reader.readAsDataURL(photo);
   }
 
   render() {
@@ -29,9 +29,9 @@ class PhotoComponent extends React.Component {
     } = this;
 
     let styles = {};
-    if (props.file !== undefined) {
+    if (props.photo !== undefined) {
       styles = {
-        backgroundImage: 'url(' + props.file + ')',
+        backgroundImage: 'url(' + props.photo + ')',
       };
     }
 

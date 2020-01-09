@@ -16,18 +16,21 @@ class MainPage extends React.Component {
     const localStorageData = localStorage.get("userData", {
       name: "",
       job: "",
-      file: undefined,
+      photo: undefined,
       phone: "",
       email: "",
       linkedin: "",
       github: "",
-      checkedPalette: 1
+      checkedPalette: 1,
+      buttonFetch: ''
     });
     this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleChangeFile = this.handleChangeFile.bind(this);
+    this.handleFetch = this.handleFetch.bind(this);
+
   }
 
   isValidated() {
@@ -49,27 +52,16 @@ class MainPage extends React.Component {
     }
   }
 
+
+  // PALETTES
   handleChecked(checkedPalette) {
     this.setState({
       checkedPalette: checkedPalette
     });
   }
 
-  handleReset(event) {
-    event.preventDefault();
 
-    this.setState({
-      name: "",
-      job: "",
-      file: undefined,
-      phone: "",
-      email: "",
-      linkedin: "",
-      github: "",
-      checkedPalette: 1
-    });
-  }
-
+  //INPUTS INFO
   handleChangeInputs(inputName, inputValue) {
     if (inputValue !== "") {
       this.setState({
@@ -82,16 +74,66 @@ class MainPage extends React.Component {
     }
   }
 
+
+  //IMAGEN
+  handleChangeFile(photo) {
+    this.setState({
+      photo: photo
+    });
+  }
+
+
+  //RESET
+  handleReset(event) {
+    event.preventDefault();
+
+    this.setState({
+      name: "",
+      job: "",
+      photo: undefined,
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      checkedPalette: 1
+    });
+  }
+
+
+  //LOCAL STORAGE
   componentDidUpdate() {
     localStorage.set(`userData`, this.state);
   }
 
-  handleChangeFile(file) {
-    this.setState({
-      file: file
-    });
+
+  //FETCH 
+  getDataFromApi(data) {
+    console.log(data)
+    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(function (resp) {
+        console.log(resp)
+        return resp.json();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 
+  handleFetch(ev) {
+    this.setState({
+      buttonFetch: ev
+    })
+    this.getDataFromApi(this.state);
+  }
+
+
+  //RENDERIZADO 
   render() {
     return (
       <div>
@@ -100,7 +142,7 @@ class MainPage extends React.Component {
           <Card
             name={this.state.name}
             job={this.state.job}
-            file={this.state.file}
+            photo={this.state.photo}
             phone={this.state.phone}
             email={this.state.email}
             linkedin={this.state.linkedin}
@@ -119,7 +161,7 @@ class MainPage extends React.Component {
                   handleChangeFile={this.handleChangeFile}
                   name={this.state.name}
                   job={this.state.job}
-                  file={this.state.file}
+                  photo={this.state.photo}
                   phone={this.state.phone}
                   email={this.state.email}
                   linkedin={this.state.linkedin}
@@ -127,7 +169,11 @@ class MainPage extends React.Component {
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
+<<<<<<< HEAD
                 <Share isValidated={this.isValidated()} />
+=======
+                <Share handleFetch={this.handleFetch} />
+>>>>>>> dev
               </Collapsable>
             </form>
           </div>
