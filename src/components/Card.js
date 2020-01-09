@@ -11,7 +11,7 @@ function Card(props) {
     <section className='result'>
       <div className='result__container'>
         <Reset handleReset={props.handleReset} />
-        <div className={`card js-card-palette${props.checkedPalette}`}>
+        <div className={`card js-card-palette${props.palette}`}>
           <User
             name={props.name || 'Nombre Apellido'}
             job={props.job || 'Front-end developer'} />
