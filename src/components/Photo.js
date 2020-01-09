@@ -3,9 +3,9 @@ import "../stylesheets/Card.scss";
 
 function Photo(props) {
   let styles = {};
-  if (props.file !== undefined) {
+  if (props.Photo !== undefined) {
     styles = {
-      backgroundImage: 'url(' + props.file + ')',
+      backgroundImage: 'url(' + props.photo + ')',
     };
   }
 
