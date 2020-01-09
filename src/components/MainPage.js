@@ -21,7 +21,7 @@ class MainPage extends React.Component {
       email: "",
       linkedin: "",
       github: "",
-      checkedPalette: 1,
+      palette: 1,
       buttonFetch: '',
       url: ''
     });
@@ -38,13 +38,13 @@ class MainPage extends React.Component {
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const phoneRegex = /[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}/;
     if (
-      name === "" ||
-      job === "" ||
+      name === undefined ||
+      job === undefined ||
       photo === undefined ||
       !phoneRegex.test(phone) ||
       !emailRegex.test(email) ||
-      linkedin === "" ||
-      github === ""
+      linkedin === undefined ||
+      github === undefined
     ) {
       return false;
     } else {
@@ -54,9 +54,9 @@ class MainPage extends React.Component {
 
 
   // PALETTES
-  handleChecked(checkedPalette) {
+  handleChecked(palette) {
     this.setState({
-      checkedPalette: checkedPalette
+      palette: palette
     });
   }
 
@@ -95,7 +95,7 @@ class MainPage extends React.Component {
       email: "",
       linkedin: "",
       github: "",
-      checkedPalette: 1
+      palette: 1
     });
   }
 
@@ -122,7 +122,7 @@ class MainPage extends React.Component {
         this.setState({
           url: data.cardURL
         })
-        return data.cardURL
+        return data
       }
       )
       .catch(function (error) {
@@ -153,12 +153,12 @@ class MainPage extends React.Component {
             linkedin={this.state.linkedin}
             github={this.state.github}
             handleReset={this.handleReset}
-            checkedPalette={this.state.checkedPalette}
+            palette={this.state.palette}
           />
           <div className="container">
             <form className="container-form js-containerForm" method="POST">
               <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
-                <Design checkedPalette={this.state.checkedPalette} handleChecked={this.handleChecked} />
+                <Design palette={this.state.palette} handleChecked={this.handleChecked} />
               </Collapsable>
               <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
                 <Fill
