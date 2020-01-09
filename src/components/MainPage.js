@@ -149,7 +149,7 @@ class MainPage extends React.Component {
           />
           <div className="container">
             <form className="container-form js-containerForm" method="POST">
-              <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
+              <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon " defaultState="defaultState">
                 <Design checkedPalette={this.state.checkedPalette} handleChecked={this.handleChecked} />
               </Collapsable>
               <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
