@@ -30,7 +30,25 @@ class MainPage extends React.Component {
     this.handleReset = this.handleReset.bind(this);
     this.handleChangeFile = this.handleChangeFile.bind(this);
     this.handleFetch = this.handleFetch.bind(this);
+  }
 
+  isValidated() {
+    const { name, job, photo, phone, email, linkedin, github } = this.state;
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const phoneRegex = /[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}/;
+    if (
+      name === "" ||
+      job === "" ||
+      photo === undefined ||
+      !phoneRegex.test(phone) ||
+      !emailRegex.test(email) ||
+      linkedin === "" ||
+      github === ""
+    ) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 
@@ -67,6 +85,7 @@ class MainPage extends React.Component {
   //RESET
   handleReset(event) {
     event.preventDefault();
+
     this.setState({
       name: "",
       job: "",
@@ -88,7 +107,6 @@ class MainPage extends React.Component {
 
   //FETCH 
   getDataFromApi(data) {
-    console.log(data)
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -97,7 +115,6 @@ class MainPage extends React.Component {
       },
     })
       .then(function (resp) {
-        console.log(resp)
         return resp.json();
       })
       .catch(function (error) {
@@ -149,7 +166,7 @@ class MainPage extends React.Component {
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
-                <Share handleFetch={this.handleFetch} />
+                <Share isValidated={this.isValidated()} handleFetch={this.handleFetch} />
               </Collapsable>
             </form>
           </div>

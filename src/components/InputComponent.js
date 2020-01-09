@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 class InputComponent extends React.Component {
   constructor(props) {
@@ -16,19 +16,21 @@ class InputComponent extends React.Component {
 
   render() {
     const { props } = this;
-
     return (
       <React.Fragment>
-        <label htmlFor={props.htmlFor} className='form__label'>{props.label}</label>
-        <input 
-        id={props.id} 
-        type={props.type} 
-        name={props.name} 
-        placeholder={props.placeholder} 
-        className={props.className} 
-        required={props.required} 
-        value={props.value} 
-        onChange={this.handleChangeInputs} />
+        <label htmlFor={props.htmlFor} className="form__label">
+          {props.label}
+        </label>
+        <input
+          id={props.id}
+          type={props.type}
+          name={props.name}
+          placeholder={props.placeholder}
+          className={props.className}
+          required={props.required}
+          value={props.value}
+          onChange={this.handleChangeInputs}
+        />
       </React.Fragment>
     );
   }

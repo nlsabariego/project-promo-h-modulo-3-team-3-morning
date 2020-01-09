@@ -1,0 +1,79 @@
+[
+  {
+    "htmlFor": "fullName",
+    "label": "Nombre completo",
+    "type": "text",
+    "id": "name",
+    "name": "name",
+    "placeholder": "Ej:Reactivas",
+    "className": "form__input js-name",
+    "component": "textForm",
+    "required": true
+  },
+  {
+    "htmlFor": "job",
+    "label": "Puesto",
+    "type": "text",
+    "id": "job",
+    "name": "job",
+    "placeholder": "Ej:Frontend",
+    "className": "form__input js-job",
+    "component": "textForm",
+    "required": true
+  },
+  {
+    "htmlFor": "image",
+    "label": "Imagen del perfil",
+    "type": "file",
+    "id": "img-selector",
+    "name": "file",
+    "className": "form__file js__profile-upload-btn",
+    "component": "imageForm",
+    "required": true
+  },
+  {
+    "htmlFor": "email",
+    "label": "Email",
+    "type": "email",
+    "id": "email",
+    "name": "email",
+    "placeholder": "Ej:reactivas@gmail.com",
+    "className": "form__input js-email",
+    "component": "textForm",
+    "required": true
+  },
+  {
+    "htmlFor": "phone",
+    "label": "Teléfono",
+    "type": "tel",
+    "id": "phone",
+    "name": "phone",
+    "placeholder": "Enter a telephone number",
+    "className": "form__input js-phone",
+    "pattern": "[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}",
+    "component": "textForm",
+    "required": false
+  },
+  {
+    "htmlFor": "linkedin",
+    "label": "Linkedin",
+    "type": "text",
+    "id": "linkedin",
+    "name": "linkedin",
+    "placeholder": "Ej: Pepa Muñoz",
+    "className": "form__input js-linkedin",
+    "component": "textForm",
+    "required": true
+  },
+  {
+    "htmlFor": "github",
+    "label": "Github",
+    "type": "text",
+    "id": "github",
+    "name": "github",
+    "placeholder": "Ej:Pepa Muñoz",
+    "className": "form__input js-github",
+    "component": "textForm",
+    "required": true
+  }
+]

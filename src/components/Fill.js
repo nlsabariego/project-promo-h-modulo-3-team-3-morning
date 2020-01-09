@@ -1,8 +1,8 @@
-import React from 'react';
-import InputComponent from './InputComponent';
-import PhotoComponent from './PhotoComponent';
-import form from '../data/form.json';
-import '../stylesheets/Fill.scss';
+import React from "react";
+import InputComponent from "./InputComponent";
+import PhotoComponent from "./PhotoComponent";
+import form from "../data/form.json";
+import "../stylesheets/Fill.scss";
 
 function Fill(props) {
   return <div className='js-container'>{form.map((data, index) => (data.component === 'textForm'
