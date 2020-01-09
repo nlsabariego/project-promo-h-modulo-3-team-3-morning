@@ -9,7 +9,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import Collapsable from "./Collapsable";
 import localStorage from "../localStorage";
-import getDataFromApi from "../api/Fetch"
 
 class MainPage extends React.Component {
   constructor() {
@@ -22,17 +21,72 @@ class MainPage extends React.Component {
       email: "",
       linkedin: "",
       github: "",
-      checkedPalette: 1
+      checkedPalette: 1,
+      buttonFetch: ''
     });
     this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
     this.handleChecked = this.handleChecked.bind(this);
     this.handleReset = this.handleReset.bind(this);
     this.handleChangeFile = this.handleChangeFile.bind(this);
+    this.handleFetch = this.handleFetch.bind(this);
+
   }
 
-  //FETCH - pasar a share
 
+  // PALETTES
+  handleChecked(checkedPalette) {
+    this.setState({
+      checkedPalette: checkedPalette
+    });
+  }
+
+
+  //INPUTS INFO
+  handleChangeInputs(inputName, inputValue) {
+    if (inputValue !== "") {
+      this.setState({
+        [inputName]: inputValue
+      });
+    } else {
+      this.setState({
+        [inputName]: undefined
+      });
+    }
+  }
+
+
+  //IMAGEN
+  handleChangeFile(photo) {
+    this.setState({
+      photo: photo
+    });
+  }
+
+
+  //RESET
+  handleReset(event) {
+    event.preventDefault();
+    this.setState({
+      name: "",
+      job: "",
+      photo: undefined,
+      phone: "",
+      email: "",
+      linkedin: "",
+      github: "",
+      checkedPalette: 1
+    });
+  }
+
+
+  //LOCAL STORAGE
+  componentDidUpdate() {
+    localStorage.set(`userData`, this.state);
+  }
+
+
+  //FETCH 
   getDataFromApi(data) {
     console.log(data)
     fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
@@ -51,59 +105,15 @@ class MainPage extends React.Component {
       });
   }
 
-
-
-  formatData() {
-    return (
-      this.state({
-
-      })
-    )
-  }
-
-  handleChecked(checkedPalette) {
+  handleFetch(ev) {
     this.setState({
-      checkedPalette: checkedPalette
-    });
+      buttonFetch: ev
+    })
     this.getDataFromApi(this.state);
   }
 
-  handleReset(event) {
-    event.preventDefault();
-    this.setState({
-      name: "",
-      job: "",
-      photo: undefined,
-      phone: "",
-      email: "",
-      linkedin: "",
-      github: "",
-      checkedPalette: 1
-    });
-  }
 
-  handleChangeInputs(inputName, inputValue) {
-    if (inputValue !== "") {
-      this.setState({
-        [inputName]: inputValue
-      });
-    } else {
-      this.setState({
-        [inputName]: undefined
-      });
-    }
-  }
-
-  componentDidUpdate() {
-    localStorage.set(`userData`, this.state);
-  }
-
-  handleChangeFile(photo) {
-    this.setState({
-      photo: photo
-    });
-  }
-
+  //RENDERIZADO 
   render() {
     return (
       <div>
@@ -139,7 +149,7 @@ class MainPage extends React.Component {
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
-                <Share />
+                <Share handleFetch={this.handleFetch} />
               </Collapsable>
             </form>
           </div>

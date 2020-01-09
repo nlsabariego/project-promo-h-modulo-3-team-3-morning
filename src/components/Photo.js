@@ -3,7 +3,7 @@ import "../stylesheets/Card.scss";
 
 function Photo(props) {
   let styles = {};
-  if (props.Photo !== undefined) {
+  if (props.photo !== undefined) {
     styles = {
       backgroundImage: 'url(' + props.photo + ')',
     };
