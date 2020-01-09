@@ -6,12 +6,12 @@ import { Route, Switch } from "react-router-dom";
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route path="/main-page" component={MainPage} />
         </Switch>
-      </div>
+      </React.Fragment>
     );
   }
 }
