@@ -13,10 +13,13 @@
   // display: block;
 }
 
-.content-collapsible .collapse__icon-down {
-  transform: translateY(-50%) rotate(-180deg);
+.collapse__icon-down {
+  transform: rotate(0deg);
 
   &:hover {
     color: $firstcolor;
   }
+}
+.animate-arrow {
+  transform: rotate(180deg);
 }
