@@ -7,6 +7,12 @@ class Share extends React.Component {
     this.state = {
       isValidated: false
     };
+    this.handleFetch = this.handleFetch.bind(this);
+  }
+
+  handleFetch(ev) {
+    this.props.handleFetch(ev.target.value);
+    console.log(ev.target.value);
   }
 
   render() {
@@ -16,6 +22,9 @@ class Share extends React.Component {
           <button
             className={`share__button  js-button ${this.props.isValidated === true ? "share__button--active" : ""}`}
             type="submit"
+            onClick={this.handleFetch}
+            value='1'
+
           >
             <i className="far fa-address-card"></i>Crear tarjeta
           </button>
