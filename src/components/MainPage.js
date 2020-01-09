@@ -22,7 +22,8 @@ class MainPage extends React.Component {
       linkedin: "",
       github: "",
       checkedPalette: 1,
-      buttonFetch: ''
+      buttonFetch: '',
+      url: ''
     });
     this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
@@ -117,6 +118,13 @@ class MainPage extends React.Component {
       .then(function (resp) {
         return resp.json();
       })
+      .then(data => {
+        this.setState({
+          url: data.cardURL
+        })
+        return data.cardURL
+      }
+      )
       .catch(function (error) {
         console.log(error);
       });
@@ -166,7 +174,7 @@ class MainPage extends React.Component {
                 />
               </Collapsable>
               <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
-                <Share isValidated={this.isValidated()} handleFetch={this.handleFetch} />
+                <Share isValidated={this.isValidated()} handleFetch={this.handleFetch} url={this.state.url} />
               </Collapsable>
             </form>
           </div>
