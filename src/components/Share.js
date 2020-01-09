@@ -12,7 +12,6 @@ class Share extends React.Component {
 
   handleFetch(ev) {
     this.props.handleFetch(ev.target.value);
-    console.log(ev.target.value);
   }
 
   render() {
