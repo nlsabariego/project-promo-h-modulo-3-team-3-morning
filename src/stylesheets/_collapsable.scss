@@ -1,11 +1,22 @@
 .close {
-  display: none;
+  // display: none;
+  max-height: 0px;
+  transition: max-height 1s ease-in-out;
+  overflow: hidden;
 }
 
 .open {
-  display: block;
+  max-height: 700px;
+  transition: max-height 1s ease-in-out;
+  overflow: hidden;
+
+  // display: block;
 }
 
 .content-collapsible .collapse__icon-down {
   transform: translateY(-50%) rotate(-180deg);
+
+  &:hover {
+    color: $firstcolor;
+  }
 }

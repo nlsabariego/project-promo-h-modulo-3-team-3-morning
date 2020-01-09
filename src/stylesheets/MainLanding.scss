@@ -1,4 +1,4 @@
-@import 'commons.scss';
+@import "commons.scss";
 .landing {
   width: 100vw;
 
@@ -104,5 +104,10 @@
     font-weight: 600;
     font-size: 1.6rem;
     margin: 18.6rem 0 3rem 0;
+
+    &:hover {
+      transition: all 0.3s ease-in-out;
+      background-color: $firstcolor;
+    }
   }
 }
