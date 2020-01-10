@@ -4,8 +4,10 @@ import "../stylesheets/Share.scss";
 let twitterMsg = 'This is my awesome contact card!!';
 
 function Share(props) {
-  function handleFetch(ev) {
-    return props.handleFetch(ev.target.value);
+  function handleFetch() {
+    if (props.isValidated === true) {
+      return props.handleFetch();
+    }
   }
   return (
 
@@ -15,7 +17,6 @@ function Share(props) {
           className={`share__button  js-button ${props.isValidated === true ? "share__button--active" : ""}`}
           type="submit"
           onClick={handleFetch}
-          value='1'
 
         >
           <i className="far fa-address-card"></i>Crear tarjeta

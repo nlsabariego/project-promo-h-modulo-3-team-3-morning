@@ -22,7 +22,6 @@ class MainPage extends React.Component {
       linkedin: "",
       github: "",
       palette: 1,
-      buttonFetch: '',
       url: ''
     });
     this.state = localStorageData;
@@ -122,7 +121,6 @@ class MainPage extends React.Component {
         this.setState({
           url: data.cardURL
         })
-        return data
       }
       )
       .catch(function (error) {
@@ -130,10 +128,7 @@ class MainPage extends React.Component {
       });
   }
 
-  handleFetch(ev) {
-    this.setState({
-      buttonFetch: ev
-    })
+  handleFetch() {
     this.getDataFromApi(this.state);
   }
 
