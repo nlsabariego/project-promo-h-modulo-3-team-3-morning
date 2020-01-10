@@ -27,6 +27,7 @@ function Fill(props) {
       className={data.className}
       required={data.required === true} handleChangeFile={props.handleChangeFile}
       photo={props.photo} />))}
+    <small>Todos los campos son obligatorios excepto <strong>teléfono</strong></small>
   </div>;
 }
 
