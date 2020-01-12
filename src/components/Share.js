@@ -21,7 +21,7 @@ function Share(props) {
         </button>
         <div
           className={`share__result 
-          ${props.url === "" ? "share__result--hidden" : ""}`}
+          ${props.url === "" || props.url === undefined ? "share__result--hidden" : ""}`}
         >
           <p className="share__result__text">La tarjeta ha sido creada:</p>
           <a className="share__result__url" href={props.url} rel="noopener noreferrer" target="_blank">

@@ -90,7 +90,8 @@ class MainPage extends React.Component {
       email: "",
       linkedin: "",
       github: "",
-      palette: 1
+      palette: 1,
+      url: ""
     });
   }
 
