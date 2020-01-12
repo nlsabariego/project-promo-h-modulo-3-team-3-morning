@@ -96,7 +96,7 @@ class MainPage extends React.Component {
 
   //LOCAL STORAGE
   componentDidUpdate() {
-    localStorage.set(`userData`, this.state);
+    localStorage.set("userData", this.state);
   }
 
   //FETCH
