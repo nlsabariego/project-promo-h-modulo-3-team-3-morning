@@ -22,7 +22,7 @@ class MainPage extends React.Component {
       linkedin: "",
       github: "",
       palette: 1,
-      url: ''
+      url: ""
     });
     this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
@@ -32,18 +32,22 @@ class MainPage extends React.Component {
     this.handleFetch = this.handleFetch.bind(this);
   }
 
+  isEmpty(inputValue) {
+    return inputValue === "" || inputValue === undefined;
+  }
+
   isValidated() {
     const { name, job, photo, phone, email, linkedin, github } = this.state;
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const phoneRegex = /[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}/;
     if (
-      name === undefined ||
-      job === undefined ||
+      this.isEmpty(name) ||
+      this.isEmpty(job) ||
       photo === undefined ||
       !phoneRegex.test(phone) ||
       !emailRegex.test(email) ||
-      linkedin === undefined ||
-      github === undefined
+      this.isEmpty(linkedin) ||
+      this.isEmpty(github)
     ) {
       return false;
     } else {
@@ -51,14 +55,12 @@ class MainPage extends React.Component {
     }
   }
 
-
   // PALETTES
   handleChecked(palette) {
     this.setState({
       palette: palette
     });
   }
-
 
   //INPUTS INFO
   handleChangeInputs(inputName, inputValue) {
@@ -73,14 +75,12 @@ class MainPage extends React.Component {
     }
   }
 
-
   //IMAGEN
   handleChangeFile(photo) {
     this.setState({
       photo: photo
     });
   }
-
 
   //RESET
   handleReset(event) {
@@ -98,32 +98,29 @@ class MainPage extends React.Component {
     });
   }
 
-
   //LOCAL STORAGE
   componentDidUpdate() {
     localStorage.set(`userData`, this.state);
   }
 
-
-  //FETCH 
+  //FETCH
   getDataFromApi(data) {
-    fetch('https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/', {
-      method: 'POST',
+    fetch("https://us-central1-awesome-cards-cf6f0.cloudfunctions.net/card/", {
+      method: "POST",
       body: JSON.stringify(data),
       headers: {
-        'Content-Type': 'application/json',
-      },
+        "Content-Type": "application/json"
+      }
     })
-      .then(function (resp) {
+      .then(function(resp) {
         return resp.json();
       })
       .then(data => {
         this.setState({
           url: data.cardURL
-        })
-      }
-      )
-      .catch(function (error) {
+        });
+      })
+      .catch(function(error) {
         console.log(error);
       });
   }
@@ -132,8 +129,7 @@ class MainPage extends React.Component {
     this.getDataFromApi(this.state);
   }
 
-
-  //RENDERIZADO 
+  //RENDERIZADO
   render() {
     return (
       <div>
