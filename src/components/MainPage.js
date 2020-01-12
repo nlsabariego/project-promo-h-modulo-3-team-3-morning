@@ -32,22 +32,18 @@ class MainPage extends React.Component {
     this.handleFetch = this.handleFetch.bind(this);
   }
 
-  isEmpty(inputValue) {
-    return inputValue === "" || inputValue === undefined;
-  }
-
   isValidated() {
     const { name, job, photo, phone, email, linkedin, github } = this.state;
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const phoneRegex = /[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}/;
     if (
-      this.isEmpty(name) ||
-      this.isEmpty(job) ||
+      name === "" ||
+      job === "" ||
       photo === undefined ||
       !phoneRegex.test(phone) ||
       !emailRegex.test(email) ||
-      this.isEmpty(linkedin) ||
-      this.isEmpty(github)
+      linkedin === "" ||
+      github === ""
     ) {
       return false;
     } else {
@@ -70,7 +66,7 @@ class MainPage extends React.Component {
       });
     } else {
       this.setState({
-        [inputName]: undefined
+        [inputName]: ""
       });
     }
   }
