@@ -9,15 +9,13 @@ import Icons from './Icons';
 function Card(props) {
   return (
     <section className='result'>
-      <div className='result__container'>
-        <Reset handleReset={props.handleReset} />
-        <div className={`card js-card-palette${props.palette}`}>
-          <User
-            name={props.name || 'Nombre Apellido'}
-            job={props.job || 'Front-end developer'} />
-          <Photo photo={props.photo} />
-          <Icons phone={props.phone} email={props.email} linkedin={props.linkedin} github={props.github} />
-        </div>
+      <Reset handleReset={props.handleReset} />
+      <div className={`card js-card-palette${props.palette}`}>
+        <User
+          name={props.name || 'Nombre Apellido'}
+          job={props.job || 'Front-end developer'} />
+        <Photo photo={props.photo} />
+        <Icons phone={props.phone} email={props.email} linkedin={props.linkedin} github={props.github} />
       </div>
     </section>
   );

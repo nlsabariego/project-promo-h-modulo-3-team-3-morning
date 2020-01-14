@@ -2,17 +2,22 @@
 .container-form {
   display: flex;
   flex-direction: column;
-  padding: 0.5rem 0rem 2.3rem 0rem;
+  padding: 0rem 2rem;
+
+  @media all and (min-width: 768px) {
+    padding: 0rem;
+  }
 }
 
 .form {
+  margin-bottom: 3rem;
+
   &__label {
     display: block;
     font-family: $fonttertiary;
     color: $secondcolor;
     font-size: 1.4rem;
-    margin-top: 2rem;
-    margin-bottom: 0.7rem;
+    margin: 0.8rem 0;
   }
 
   &__input {
@@ -54,6 +59,7 @@
       font-family: $fonttertiary;
       box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.32);
       cursor: pointer;
+      border: none;
     }
 
     &--min {
@@ -65,4 +71,11 @@
       background-size: cover;
     }
   }
+}
+
+.legend {
+  font-family: "Open Sans";
+  color: #e17334;
+  font-size: 1.1rem;
+  text-align: right;
 }

@@ -3,9 +3,11 @@ import "../stylesheets/Reset.scss";
 
 function Reset(props) {
   return (
-    <button className="button--delete" onClick={props.handleReset}>
-      <i className="far fa-trash-alt"></i>Reset
+    <div className="button__container">
+      <button className="button--delete" onClick={props.handleReset}>
+        <i className="far fa-trash-alt"></i>Reset
     </button>
+    </div>
   );
 }
 

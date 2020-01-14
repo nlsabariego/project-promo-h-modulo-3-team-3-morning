@@ -5,7 +5,7 @@ import form from "../data/form.json";
 import "../stylesheets/Fill.scss";
 
 function Fill(props) {
-  return <div className='js-container'>{form.map((data, index) => (data.component === 'textForm'
+  return <div className='form'>{form.map((data, index) => (data.component === 'textForm'
     ? <InputComponent
       key={index}
       htmlFor={data.htmlFor}
@@ -24,11 +24,11 @@ function Fill(props) {
       id={data.id}
       type={data.type}
       name={data.name}
+      label={data.label}
       className={data.className}
       required={data.required === true} handleChangeFile={props.handleChangeFile}
       photo={props.photo} />))}
-    <small>Todos los campos son obligatorios excepto <strong>teléfono</strong></small>
-  </div>;
-}
+  </div>
+};
 
 export default Fill;
