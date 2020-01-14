@@ -56,6 +56,7 @@ class PhotoComponent extends React.Component {
 
           />
           <button
+            type="button"
             htmlFor="file"
             className="form__image--btn js__profile-trigger"
             onClick={this.handleFakeClick}
