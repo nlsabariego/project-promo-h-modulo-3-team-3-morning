@@ -23,8 +23,7 @@ class MainPage extends React.Component {
       github: "",
       palette: 1,
       url: "",
-      load: ''
-
+      load: ""
     });
     this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
@@ -62,15 +61,18 @@ class MainPage extends React.Component {
 
   //INPUTS INFO
   handleChangeInputs(inputName, inputValue) {
-    if (inputValue !== "") {
-      this.setState({
+    this.setState(
+      {
         [inputName]: inputValue
-      });
-    } else {
-      this.setState({
-        [inputName]: ""
-      });
-    }
+      },
+      () => {
+        if (!this.isValidated()) {
+          this.setState({
+            url: ""
+          });
+        }
+      }
+    );
   }
 
   //IMAGEN
@@ -111,14 +113,14 @@ class MainPage extends React.Component {
         "Content-Type": "application/json"
       }
     })
-      .then(function (resp) {
+      .then(function(resp) {
         return resp.json();
       })
       .then(data => {
         if (data === undefined) {
           return this.setState({
             load: true
-          })
+          });
         } else {
           this.setState({
             url: data.cardURL,
@@ -126,7 +128,7 @@ class MainPage extends React.Component {
           });
         }
       })
-      .catch(function (error) {
+      .catch(function(error) {
         console.log(error);
       });
   }
@@ -135,7 +137,7 @@ class MainPage extends React.Component {
     this.getDataFromApi(this.state);
     this.setState({
       load: true
-    })
+    });
   }
 
   //RENDERIZADO
@@ -157,10 +159,10 @@ class MainPage extends React.Component {
           />
           <div className="container">
             <form className="container-form js-containerForm" method="POST">
-              <Collapsable title="Diseña" defaultState="defaultState" >
+              <Collapsable title="Diseña" defaultState="defaultState">
                 <Design palette={this.state.palette} handleChecked={this.handleChecked} />
               </Collapsable>
-              <Collapsable title="Rellena" >
+              <Collapsable title="Rellena">
                 <span className="legend">Todos los campos son obligatorios * </span>
                 <Fill
                   handleChangeInputs={this.handleChangeInputs}
@@ -174,12 +176,13 @@ class MainPage extends React.Component {
                   github={this.state.github}
                 />
               </Collapsable>
-              <Collapsable title="Comparte" >
+              <Collapsable title="Comparte">
                 <Share
                   isValidated={this.isValidated()}
                   handleFetch={this.handleFetch}
                   url={this.state.url}
-                  load={this.state.load} />
+                  load={this.state.load}
+                />
               </Collapsable>
             </form>
           </div>
