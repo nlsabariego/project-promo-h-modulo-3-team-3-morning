@@ -41,7 +41,7 @@ class PhotoComponent extends React.Component {
       <React.Fragment>
         <label
           htmlFor={props.htmlFor}
-          className="form__label">
+          className="form__label">{props.label}
         </label>
         <div className="form__image">
           <input

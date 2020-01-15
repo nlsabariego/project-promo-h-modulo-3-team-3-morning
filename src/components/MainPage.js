@@ -109,7 +109,7 @@ class MainPage extends React.Component {
         "Content-Type": "application/json"
       }
     })
-      .then(function(resp) {
+      .then(function (resp) {
         return resp.json();
       })
       .then(data => {
@@ -117,7 +117,7 @@ class MainPage extends React.Component {
           url: data.cardURL
         });
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.log(error);
       });
   }
@@ -129,7 +129,7 @@ class MainPage extends React.Component {
   //RENDERIZADO
   render() {
     return (
-      <div>
+      <div className="page">
         <Header />
         <main className="main">
           <Card
@@ -149,6 +149,7 @@ class MainPage extends React.Component {
                 <Design palette={this.state.palette} handleChecked={this.handleChecked} />
               </Collapsable>
               <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
+                <span className="legend">Todos los campos son obligatorios excepto <strong>teléfono</strong></span>
                 <Fill
                   handleChangeInputs={this.handleChangeInputs}
                   handleChangeFile={this.handleChangeFile}

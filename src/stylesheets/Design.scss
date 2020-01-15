@@ -2,8 +2,6 @@
 @import "commons.scss";
 
 .section {
-  // padding: 1rem 0 1rem 3.1rem;
-  // margin: 0 3rem 0 3rem;
   border-bottom: 1px solid #d8d8d8;
 }
 
@@ -14,7 +12,7 @@
   flex-direction: row;
   justify-content: space-between;
   position: relative;
-  padding: 1rem 0 1rem 3.1rem;
+  padding: 2.7rem 0 2rem 3.1rem;
 
   &:hover {
     cursor: pointer;
@@ -33,7 +31,6 @@
     }
 
     &-title {
-      padding-left: 1rem;
       font-family: $fonttertiary;
       font-weight: bold;
       font-size: 1.8rem;
@@ -59,7 +56,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 2.2rem;
+  margin-bottom: 3rem;
 
   &__title {
     font-size: 1.4rem;
@@ -67,7 +64,6 @@
     font-family: $fonttertiary;
     font-weight: normal;
     text-transform: uppercase;
-    margin-left: 2.5rem;
   }
 
   &__palettes {
