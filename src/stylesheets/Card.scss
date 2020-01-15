@@ -59,7 +59,7 @@
     height: 3.2rem;
     border-radius: 1.6rem;
     border: solid 0.2rem $fifthcolor;
-    line-height: 3.6rem;
+    line-height: 3rem;
     text-align: center;
   }
 
@@ -69,6 +69,7 @@
 
   &__icon {
     font-size: 1.8rem;
+    text-align: center;
   }
 
   &__image {

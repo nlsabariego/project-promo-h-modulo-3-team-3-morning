@@ -1,4 +1,4 @@
-@import "commons.scss";
+@import 'commons.scss';
 .share {
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   width: 19.9rem;
   height: 5rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   text-transform: uppercase;
   font-family: $fonttertiary;
@@ -21,17 +21,10 @@
   padding-right: 1.8rem;
   margin-top: 3rem;
   margin-bottom: 3rem;
-
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
-
   &--active {
     background-color: $firstcolor;
   }
-}
-
-.far {
-  width: 2.5rem;
-  height: 2.2rem;
 }
 
 .share__result {
@@ -68,9 +61,8 @@
     padding: 0.3rem 0.9rem 0.7rem 1.05rem;
     cursor: pointer;
   }
-}
-.fab {
-  width: 1.8rem;
-  height: 1.8rem;
-  padding-top: 0.6rem;
+  &__icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
 }

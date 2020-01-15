@@ -145,10 +145,10 @@ class MainPage extends React.Component {
           />
           <div className="container">
             <form className="container-form js-containerForm" method="POST">
-              <Collapsable title="Diseña" icon="far fa-object-ungroup collapse__items-icon" defaultState="defaultState">
+              <Collapsable title="Diseña" defaultState="defaultState" >
                 <Design palette={this.state.palette} handleChecked={this.handleChecked} />
               </Collapsable>
-              <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
+              <Collapsable title="Rellena" >
                 <span className="legend">Todos los campos son obligatorios * </span>
                 <Fill
                   handleChangeInputs={this.handleChangeInputs}
@@ -162,7 +162,7 @@ class MainPage extends React.Component {
                   github={this.state.github}
                 />
               </Collapsable>
-              <Collapsable title="Comparte" icon="fas fa-share-alt collapse__items-icon">
+              <Collapsable title="Comparte" >
                 <Share isValidated={this.isValidated()} handleFetch={this.handleFetch} url={this.state.url} />
               </Collapsable>
             </form>
