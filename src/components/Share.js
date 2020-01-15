@@ -1,5 +1,10 @@
 import React from "react";
 import "../stylesheets/Share.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAddressCard } from '@fortawesome/free-regular-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
+
 
 let twitterMsg = "This is my awesome contact card!!";
 
@@ -17,7 +22,8 @@ function Share(props) {
           type="submit"
           onClick={handleFetch}
         >
-          <i className="far fa-address-card"></i>Crear tarjeta
+          <i><FontAwesomeIcon icon={faAddressCard}
+          /></i>Crear tarjeta
         </button>
         <div
           className={`share__result 
@@ -34,7 +40,8 @@ function Share(props) {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <i className="fab fa-twitter"></i>Compartir en twitter
+            <i className="share__result__icon"><FontAwesomeIcon icon={faTwitter}
+            /></i>Compartir en twitter
           </a>
         </div>
       </div>

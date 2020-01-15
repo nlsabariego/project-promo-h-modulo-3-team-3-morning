@@ -1,4 +1,4 @@
-@import "commons.scss";
+@import 'commons.scss';
 
 .button {
   &__container {
@@ -7,7 +7,7 @@
   &--delete {
     width: 7.5rem;
     height: 3rem;
-    margin: 0rem 0 2rem 0;
+    margin: 0 0 2rem 0;
     border-radius: 1.5rem;
     text-align: center;
     line-height: 2.5rem;
@@ -19,5 +19,8 @@
     background-color: $fourthcolor;
     box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
     cursor: pointer;
+  }
+  &--icon {
+    margin-right: 0.8rem;
   }
 }

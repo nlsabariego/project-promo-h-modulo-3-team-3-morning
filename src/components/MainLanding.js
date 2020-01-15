@@ -1,5 +1,8 @@
 import React from "react";
 import "../stylesheets/MainLanding.scss";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faObjectUngroup, faKeyboard } from '@fortawesome/free-regular-svg-icons';
+import { faShareAlt } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 
 function MainLanding() {
@@ -15,21 +18,24 @@ function MainLanding() {
       <ul className="landing__menu">
         <li className="landing__menu__li">
           <span className="landing__menu__li__ico" title="Diseña">
-            <i className="far fa-object-ungroup"></i>
+            <i ><FontAwesomeIcon icon={faObjectUngroup}
+            /></i>
           </span>
           <p className="landing__menu__li__text">Diseña</p>
         </li>
 
         <li className="landing__menu__li">
           <span className="landing__menu__li__ico" title="Rellena">
-            <i className="far fa-keyboard"></i>
+            <i><FontAwesomeIcon icon={faKeyboard}
+            /></i>
           </span>
           <p className="landing__menu__li__text">Rellena</p>
         </li>
 
         <li className="landing__menu__li">
           <span className="landing__menu__li__ico" title="Comparte">
-            <i className="fas fa-share-alt"></i>
+            <i><FontAwesomeIcon icon={faShareAlt}
+            /></i>
           </span>
           <p className="landing__menu__li__text">Comparte</p>
         </li>
