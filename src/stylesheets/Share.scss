@@ -14,13 +14,12 @@
   font-family: $fonttertiary;
   font-size: 1.8rem;
   border-radius: 1.2rem;
-  margin-top: 3rem;
+  border: none;
   color: white;
   background-color: $fourthcolor;
   padding-left: 1.7rem;
   padding-right: 1.8rem;
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin: 3rem 0 1.5rem 0;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
   &--active {
     background-color: $firstcolor;
@@ -47,6 +46,8 @@
     color: $firstcolor;
     padding-top: 0.5rem;
     padding-bottom: 1rem;
+    width: 80%;
+    text-align: center;
   }
   &__button {
     background-color: #00a0f5;
