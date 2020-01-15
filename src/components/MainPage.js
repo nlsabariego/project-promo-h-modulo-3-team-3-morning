@@ -22,7 +22,9 @@ class MainPage extends React.Component {
       linkedin: "",
       github: "",
       palette: 1,
-      url: ""
+      url: "",
+      load: ''
+
     });
     this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
@@ -113,9 +115,16 @@ class MainPage extends React.Component {
         return resp.json();
       })
       .then(data => {
-        this.setState({
-          url: data.cardURL
-        });
+        if (data === undefined) {
+          return this.setState({
+            load: true
+          })
+        } else {
+          this.setState({
+            url: data.cardURL,
+            load: false
+          });
+        }
       })
       .catch(function (error) {
         console.log(error);
@@ -124,6 +133,9 @@ class MainPage extends React.Component {
 
   handleFetch() {
     this.getDataFromApi(this.state);
+    this.setState({
+      load: true
+    })
   }
 
   //RENDERIZADO
@@ -163,7 +175,11 @@ class MainPage extends React.Component {
                 />
               </Collapsable>
               <Collapsable title="Comparte" >
-                <Share isValidated={this.isValidated()} handleFetch={this.handleFetch} url={this.state.url} />
+                <Share
+                  isValidated={this.isValidated()}
+                  handleFetch={this.handleFetch}
+                  url={this.state.url}
+                  load={this.state.load} />
               </Collapsable>
             </form>
           </div>

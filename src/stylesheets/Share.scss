@@ -66,3 +66,15 @@
     height: 1.8rem;
   }
 }
+.loader {
+  height: 7rem;
+  animation: rotate linear 3s infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

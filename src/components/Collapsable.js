@@ -48,7 +48,6 @@ class Collapsable extends React.Component {
   }
 
   render() {
-    console.log(this.icons())
     return (
       <section className="section">
         <div className="collapse js-collapsible__tigger" onClick={this.handleClick}>
