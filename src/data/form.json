@@ -1,6 +1,7 @@
-[{
+[
+  {
     "htmlFor": "fullName",
-    "label": "Nombre completo",
+    "label": "Nombre completo *",
     "type": "text",
     "id": "name",
     "name": "name",
@@ -11,7 +12,7 @@
   },
   {
     "htmlFor": "job",
-    "label": "Puesto",
+    "label": "Puesto *",
     "type": "text",
     "id": "job",
     "name": "job",
@@ -22,7 +23,7 @@
   },
   {
     "htmlFor": "image",
-    "label": "Imagen del perfil",
+    "label": "Imagen del perfil *",
     "type": "file",
     "id": "img-selector",
     "name": "file",
@@ -32,7 +33,7 @@
   },
   {
     "htmlFor": "email",
-    "label": "Email",
+    "label": "Email *",
     "type": "email",
     "id": "email",
     "name": "email",
@@ -43,7 +44,7 @@
   },
   {
     "htmlFor": "phone",
-    "label": "Teléfono",
+    "label": "Teléfono *",
     "type": "tel",
     "id": "phone",
     "name": "phone",
@@ -51,11 +52,11 @@
     "className": "form__input js-phone",
     "pattern": "[0-9]{3}[0-9]{2}[0-9]{2}[0-9]{2}",
     "component": "textForm",
-    "required": false
+    "required": true
   },
   {
     "htmlFor": "linkedin",
-    "label": "Linkedin",
+    "label": "Linkedin *",
     "type": "text",
     "id": "linkedin",
     "name": "linkedin",
@@ -66,7 +67,7 @@
   },
   {
     "htmlFor": "github",
-    "label": "Github",
+    "label": "Github *",
     "type": "text",
     "id": "github",
     "name": "github",

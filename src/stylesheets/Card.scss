@@ -1,9 +1,8 @@
-@import "commons.scss";
+@import 'commons.scss';
 .result {
-  background-image: url("../images/background.jpg");
+  background-image: url('../images/background.jpg');
   background-position: center top;
   background-repeat: no-repeat;
-  background-size: cover;
   padding: 3.8rem 3.5rem 4rem 4.5rem;
   display: flex;
   flex-direction: column;
@@ -20,8 +19,7 @@
 
 .card {
   border-radius: 0.2rem;
-  box-shadow: 0 0.1rem 1rem 0 rgba(0, 0, 0, 0.2),
-    0 0.1rem 0.3rem 0 rgba(0, 0, 0, 0.35);
+  box-shadow: 0 0.1rem 1rem 0 rgba(0, 0, 0, 0.2), 0 0.1rem 0.3rem 0 rgba(0, 0, 0, 0.35);
   background-color: $thirdcolor;
   font-family: $fontsecondary;
   padding: 0.21rem 0 0.12rem 0;
@@ -76,7 +74,7 @@
   &__image {
     width: 24rem;
     height: 20rem;
-    background-image: url("../images/placeholderImg.jpg");
+    background-image: url('../images/placeholderImg.jpg');
     background-position: center;
     background-size: cover;
   }

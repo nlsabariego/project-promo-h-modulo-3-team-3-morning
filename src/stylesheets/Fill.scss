@@ -1,4 +1,4 @@
-@import "commons.scss";
+@import 'commons.scss';
 .container-form {
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@
 }
 
 .legend {
-  font-family: "Open Sans";
+  font-family: 'Open Sans';
   color: #e17334;
   font-size: 1.1rem;
   text-align: right;

@@ -4,7 +4,7 @@ import Footer from "./Footer";
 
 function Landing() {
   return (
-    <div>
+    <div className='landing__container'>
       <MainLanding />
       <Footer />
     </div>

@@ -149,7 +149,7 @@ class MainPage extends React.Component {
                 <Design palette={this.state.palette} handleChecked={this.handleChecked} />
               </Collapsable>
               <Collapsable title="Rellena" icon="far fa-keyboard collapse__items-icon">
-                <span className="legend">Todos los campos son obligatorios excepto <strong>teléfono</strong></span>
+                <span className="legend">Todos los campos son obligatorios * </span>
                 <Fill
                   handleChangeInputs={this.handleChangeInputs}
                   handleChangeFile={this.handleChangeFile}
