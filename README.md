@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🧪 Awesome Profile Cards ReactJS 🧪
 
-## Available Scripts
+Somo el equipo las React[ivas] y hemos desarrollado la migración de un proyecto heredado en JavaScript refactorizándolo a React.
 
-In the project directory, you can run:
+## Instalación 💿
 
-### `npm start`
+Para comenzar hay que ejecutar varios comandos:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Clonar el repositorio
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+`git clone`
 
-### `npm test`
+Instalar las dependencias del proyecto
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`npm install`
 
-### `npm run build`
+Iniciar el sevidor local
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Para subir a producción
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+`npm run push docs`
 
-### `npm run eject`
+## Objetivos del proyecto 📌
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Trabajar con código heredado y ser capaz de refactorizarlo
+- Identificar los componentes de una página y crear diferentes componentes web independientes y reutilizables
+- Aprender a usar React para crear una aplicación sencilla
+- Uso de React router para navegar entre distintas pantallas
+- Aprender a buscar información en la documentación de React
+- Profundizar en el conocimiento de transiciones y animaciones
+- Saber como pasar información entre los componentes a través de las props y lifting
+- Definir las PropsTypes para documentar mejor la aplicación
+- Asignar defaultProps
+- Implementar la validación de un formulario a través de expresiones regulares
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Tecnologías 🛠
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- Sass para dar los estilos
+- JavaScript ES6 y React para la estructura de la aplicación web
+- Git, para el control de versiones y pull-requests para revisar el código
