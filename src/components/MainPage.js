@@ -23,7 +23,7 @@ class MainPage extends React.Component {
       github: "",
       palette: 1,
       url: "",
-      load: ""
+      load: false
     });
     this.state = localStorageData;
     this.handleChangeInputs = this.handleChangeInputs.bind(this);
