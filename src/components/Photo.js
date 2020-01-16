@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/Card.scss";
 
 function Photo(props) {
@@ -14,4 +15,7 @@ function Photo(props) {
     style={styles}></div>;
 }
 
+Photo.propTypes = {
+  photo: PropTypes.string
+}
 export default Photo;

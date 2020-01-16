@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import InputComponent from "./InputComponent";
 import PhotoComponent from "./PhotoComponent";
 import form from "../data/form.json";
@@ -29,6 +30,18 @@ function Fill(props) {
       required={data.required === true} handleChangeFile={props.handleChangeFile}
       photo={props.photo} />))}
   </div>
+};
+
+Fill.propTypes = {
+  handleChangeInputs: PropTypes.func,
+  handleChangeFile: PropTypes.func,
+  name: PropTypes.string.isRequired,
+  job: PropTypes.string.isRequired,
+  photo: PropTypes.string,
+  phone: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  linkedin: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired
 };
 
 export default Fill;

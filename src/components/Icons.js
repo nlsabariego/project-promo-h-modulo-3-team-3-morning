@@ -1,12 +1,10 @@
 import React from 'react';
 import '../stylesheets/Card.scss';
+import PropTypes from "prop-types";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faLinkedinIn, faGithubAlt } from '@fortawesome/free-brands-svg-icons';
-
-
-
 
 function Icons(props) {
   return (
@@ -39,4 +37,10 @@ function Icons(props) {
   );
 }
 
+Icons.propTypes = {
+  phone: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  linkedin: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired
+};
 export default Icons;

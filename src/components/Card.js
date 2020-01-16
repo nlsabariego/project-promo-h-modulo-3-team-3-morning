@@ -33,7 +33,7 @@ Card.defaultProps = {
 Card.propTypes = {
   name: PropTypes.string.isRequired,
   job: PropTypes.string.isRequired,
-  phone: PropTypes.string,
+  phone: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   linkedin: PropTypes.string.isRequired,
   github: PropTypes.string.isRequired

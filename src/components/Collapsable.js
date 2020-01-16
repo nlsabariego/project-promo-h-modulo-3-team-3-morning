@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faObjectUngroup, faKeyboard } from '@fortawesome/free-regular-svg-icons';
 import { faShareAlt, faAngleDown } from '@fortawesome/free-solid-svg-icons';
@@ -48,6 +49,7 @@ class Collapsable extends React.Component {
   }
 
   render() {
+
     return (
       <section className="section">
         <div className="collapse js-collapsible__tigger" onClick={this.handleClick}>
@@ -63,5 +65,7 @@ class Collapsable extends React.Component {
     );
   }
 }
-
+Collapsable.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 export default Collapsable;

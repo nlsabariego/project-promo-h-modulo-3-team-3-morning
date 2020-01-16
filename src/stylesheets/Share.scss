@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-width: 100%;
 }
 .share__button {
   width: 19.9rem;
@@ -17,8 +18,7 @@
   border: none;
   color: white;
   background-color: $fourthcolor;
-  padding-left: 1.7rem;
-  padding-right: 1.8rem;
+  padding: 0 1.8rem 0 1.7rem;
   margin: 3rem 0 1.5rem 0;
   box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.32);
   &--active {
@@ -44,8 +44,7 @@
     font-size: 1.2rem;
     font-family: $fonttertiary;
     color: $firstcolor;
-    padding-top: 0.5rem;
-    padding-bottom: 1rem;
+    padding: 0.5rem 0 1rem 0;
     width: 80%;
     text-align: center;
   }

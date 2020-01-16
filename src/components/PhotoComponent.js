@@ -37,8 +37,7 @@ class PhotoComponent extends React.Component {
 
 
     return (
-
-      <React.Fragment>
+      < React.Fragment >
         <label
           htmlFor={props.htmlFor}
           className="form__label">{props.label}
@@ -68,19 +67,22 @@ class PhotoComponent extends React.Component {
             style={styles}
           />
         </div>
-      </React.Fragment>
+      </React.Fragment >
     )
   }
 }
 
 
 PhotoComponent.propTypes = {
-  htmlFor: PropTypes.string,
-  id: PropTypes.string,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  className: PropTypes.string,
+  htmlFor: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
   required: PropTypes.bool.isRequired,
+  handleChangeFile: PropTypes.func.isRequired,
+  photo: PropTypes.string,
 };
 
 

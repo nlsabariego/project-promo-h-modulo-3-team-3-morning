@@ -1,39 +1,34 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-class InputComponent extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChangeInputs = this.handleChangeInputs.bind(this);
-  }
+function InputComponent(props) {
 
-  handleChangeInputs(event) {
+  const handleChangeInputs = (event) => {
     event.preventDefault();
     const inputName = event.target.name;
     const inputValue = event.target.value;
-    this.props.handleChangeInputs(inputName, inputValue);
-  }
+    props.handleChangeInputs(inputName, inputValue);
+  };
 
-  render() {
-    const { props } = this;
-    return (
-      <React.Fragment>
-        <label htmlFor={props.htmlFor} className="form__label">
-          {props.label}
-        </label>
-        <input
-          id={props.id}
-          type={props.type}
-          name={props.name}
-          placeholder={props.placeholder}
-          className={props.className}
-          required={props.required}
-          value={props.value}
-          onChange={this.handleChangeInputs}
-        />
-      </React.Fragment>
-    );
-  }
+  return (
+    <React.Fragment>
+      <label htmlFor={props.htmlFor} className="form__label">
+        {props.label}
+      </label>
+      <input
+        id={props.id}
+        type={props.type}
+        name={props.name}
+        placeholder={props.placeholder}
+        className={props.className}
+        required={props.required}
+        value={props.value}
+        onChange={handleChangeInputs}
+      />
+    </React.Fragment>
+  );
+
+
 }
 
 InputComponent.propTypes = {

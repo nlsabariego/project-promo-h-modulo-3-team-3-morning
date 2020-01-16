@@ -1,5 +1,4 @@
 .close {
-  // display: none;
   max-height: 0px;
   transition: max-height 1s ease-in-out;
   overflow: hidden;
@@ -9,8 +8,6 @@
   max-height: 700px;
   transition: max-height 1s ease-in-out;
   overflow: hidden;
-
-  // display: block;
 }
 
 .collapse__icon-down {

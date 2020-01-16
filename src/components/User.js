@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../stylesheets/Card.scss";
 
 function User(props) {
@@ -9,5 +10,8 @@ function User(props) {
     </div>
   );
 }
-
+User.propTypes = {
+  name: PropTypes.string,
+  job: PropTypes.string
+};
 export default User;

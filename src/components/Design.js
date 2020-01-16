@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Palettes from './Palettes';
 import '../stylesheets/Design.scss';
 
@@ -59,4 +60,9 @@ function Design(props) {
     </div>
   );
 }
+Design.propTypes = {
+  palette: PropTypes.number.isRequired,
+  handleChecked: PropTypes.func
+};
+
 export default Design;

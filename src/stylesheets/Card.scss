@@ -1,6 +1,6 @@
 @import 'commons.scss';
 .result {
-  background-image: url('../images/background.jpg');
+  background-image: url('../images/fondoquimica.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   background-size: auto auto;
@@ -77,7 +77,7 @@
   &__image {
     width: 24rem;
     height: 20rem;
-    background-image: url('../images/placeholderImg.jpg');
+    background-image: url('../images/card-photo.png');
     background-position: center;
     background-size: cover;
   }
